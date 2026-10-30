@@ -18,5 +18,6 @@ Página única em HTML/CSS/JS, sem build. Tudo está no `index.html` (a foto é 
 - `WEB3FORMS_KEY` no `index.html`: chave do formulário. Ela é pública por design (só envia mensagens para o e-mail do Igor).
 - Número do WhatsApp: `5514998470667`.
 - Máscara do telefone: remove +55 e 0 inicial e limita a 11 dígitos. Fixo (10 dígitos) usa (00) 0000-0000.
-- Projetos na seção "Trabalhos recentes" são conceitos (negócios fictícios) e devem manter a etiqueta "Conceito".
+- Projetos na seção "Trabalhos recentes" são conceitos (negócios fictícios). O aviso fica no subtítulo da seção e no rodapé de cada página em `projetos/`; não apresentar como clientes reais.
+- Os prints dos cards (`assets/projetos/*.jpg`) são gerados a partir das páginas em `projetos/`. Se mudar uma página, gere o print de novo (1440x2160, reduzido para 960x1440).
 - Identidade visual: fundo `#0d0a14`, roxo `#9d5cff`, lilás `#c084fc`, fontes Sora (títulos) e Inter (texto).

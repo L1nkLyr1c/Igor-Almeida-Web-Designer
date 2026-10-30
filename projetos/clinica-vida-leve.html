@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Vida Leve | Projeto conceito por Igor Almeida</title><meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#1f9e8b;--teal2:#16766a;--soft:#e8f6f3;--ink:#103a35;--muted:#5b716d;--line:#d9ebe7}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"DM Sans",sans-serif;background:#fff;color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}.w{width:min(1180px,100% - 32px);margin:auto}
+.top{background:var(--ink);color:#cfe9e4;font-size:13px}.top .w{display:flex;justify-content:space-between;padding:9px 0}
+nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo{font-weight:700;font-size:24px;display:flex;align-items:center;gap:10px;color:var(--teal2)}
+.logo i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#3cc2ad,var(--teal2));display:grid;place-items:center;color:#fff;font-style:normal;font-size:20px}
+.links{display:flex;gap:30px;color:var(--muted);font-size:15px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;padding:14px 24px;border-radius:999px;font-size:15px}
+.btn.o{background:#fff;color:var(--teal2);border:1.5px solid var(--line)}
+.hero{background:linear-gradient(180deg,var(--soft),#fff)}
+.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:70px 0 90px}
+.pill{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--teal2);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:22px}
+h1{font-size:58px;line-height:1.08;letter-spacing:-.02em}h1 span{color:var(--teal)}
+.hero p{color:var(--muted);font-size:19px;margin:22px 0 32px;max-width:500px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:14px;margin-top:34px;color:var(--muted);font-size:14px}
+.av{display:flex}.av span{width:38px;height:38px;border-radius:50%;border:3px solid #fff;margin-left:-10px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
+.av span:first-child{margin-left:0}
+.art{position:relative;height:460px}
+.blob{position:absolute;inset:0 0 0 40px;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;background:radial-gradient(circle at 30% 30%,#7fdccb,var(--teal) 60%,var(--teal2))}
+.cardx{position:absolute;background:#fff;border-radius:18px;box-shadow:0 20px 50px -20px rgba(16,58,53,.35);padding:18px 20px;font-size:14px}
+.c1{left:0;top:40px;width:250px}.c1 b{display:block;font-size:20px;margin-top:4px}
+.c2{right:0;bottom:50px;width:270px;display:flex;gap:12px;align-items:center}
+.c2 .d{width:46px;height:46px;border-radius:50%;background:#f4b860;display:grid;place-items:center;color:#fff;font-weight:700}
+.c3{left:60px;bottom:10px;display:flex;gap:8px;align-items:center;font-weight:700;color:var(--teal2)}
+.ok{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block}
+section{padding:90px 0}.eyebrow{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:.15em;text-transform:uppercase}
+h2{font-size:42px;letter-spacing:-.02em;margin:8px 0 40px}
+.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.spec div{border:1px solid var(--line);border-radius:20px;padding:26px}
+.ic{width:52px;height:52px;border-radius:14px;background:var(--soft);display:grid;place-items:center;margin-bottom:18px}
+.ic svg{width:26px;height:26px;stroke:var(--teal2);fill:none;stroke-width:2}
+.spec h3{font-size:19px;margin-bottom:6px}.spec p{color:var(--muted);font-size:14px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.team article{background:var(--soft);border-radius:22px;padding:26px;display:flex;gap:16px;align-items:center}
+.team .d{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:22px;flex-shrink:0}
+.team h3{font-size:18px}.team p{color:var(--muted);font-size:14px}
+.cta{background:var(--ink);color:#fff;border-radius:28px;padding:50px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.cta h2{margin:0;font-size:36px}.cta p{color:#a9cfc8}
+footer{padding:36px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:90px}
+.note{position:fixed;left:16px;bottom:16px;background:#fffd;border:1px solid var(--line);padding:8px 12px;border-radius:8px;font-size:12px;color:var(--muted)}
+@media(max-width:860px){.hero .w,.spec,.team{grid-template-columns:1fr}.art{display:none}h1{font-size:40px}.links{display:none}.cta{flex-direction:column;align-items:flex-start}}
+</style></head><body>
+<div class="top"><div class="w"><span>📞 (00) 3000-0000 · WhatsApp (00) 90000-0000</span><span>Seg a sex 7h–19h · Sáb 8h–12h</span></div></div>
+<header class="w"><nav><a class="logo"><i>+</i>vida leve</a><div class="links"><a>Especialidades</a><a>Equipe</a><a>Convênios</a><a>Como chegar</a></div><a class="btn">Marcar consulta</a></nav></header>
+<div class="hero"><div class="w"><div><span class="pill">Atendimento particular e convênios</span><h1>Cuidado que você sente, <span>do primeiro contato ao retorno.</span></h1><p>Consultas, exames e acompanhamento em um só lugar, com horários que cabem na sua rotina.</p><div class="row"><a class="btn">Marcar consulta</a><a class="btn o">Ver especialidades</a></div><div class="trust"><div class="av"><span style="background:#1f9e8b">AR</span><span style="background:#f4b860">LC</span><span style="background:#6b8cff">PM</span></div>Equipe com 8 especialidades</div></div>
+<div class="art"><div class="blob"></div><div class="cardx c1">Próximo horário disponível<b>Hoje, 16:30</b><span style="color:var(--muted)">Clínica geral</span></div><div class="cardx c2"><span class="d">LC</span><div><b>Dra. Luana Costa</b><br><span style="color:var(--muted)">Dermatologia</span></div></div><div class="cardx c3"><span class="ok"></span> Confirmação pelo WhatsApp</div></div></div></div>
+<section class="w"><span class="eyebrow">Especialidades</span><h2>Como podemos cuidar de você</h2><div class="spec">
+<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><h3>Cardiologia</h3><p>Check-up, eletrocardiograma e acompanhamento.</p></div>
+<div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span><h3>Dermatologia</h3><p>Pele, cabelo e unhas, clínica e estética.</p></div>
+<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span><h3>Clínica geral</h3><p>Consultas de rotina e encaminhamentos.</p></div>
+<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3c-2 2-2 6 0 9s2 7 0 9M17 3c2 2 2 6 0 9s-2 7 0 9"/></svg></span><h3>Nutrição</h3><p>Planos alimentares e reeducação.</p></div></div></section>
+<section class="w" style="padding-top:0"><span class="eyebrow">Equipe</span><h2>Profissionais que escutam</h2><div class="team">
+<article><span class="d" style="background:#1f9e8b">AR</span><div><h3>Dra. Ana Ribeiro</h3><p>Clínica geral</p></div></article>
+<article><span class="d" style="background:#f4b860">LC</span><div><h3>Dra. Luana Costa</h3><p>Dermatologia</p></div></article>
+<article><span class="d" style="background:#6b8cff">PM</span><div><h3>Dr. Paulo Moura</h3><p>Cardiologia</p></div></article></div></section>
+<section class="w" style="padding:0"><div class="cta"><div><h2>Marque sua consulta em 1 minuto</h2><p>Escolha o horário pelo site e receba a confirmação no WhatsApp.</p></div><a class="btn" style="background:#3cc2ad">Agendar agora</a></div></section>
+<footer><div class="w">© Clínica Vida Leve · Responsável técnico: CRM 000000</div></footer>
+<div class="note">Projeto conceito · negócio fictício · design por Igor Almeida</div>
+</body></html>
