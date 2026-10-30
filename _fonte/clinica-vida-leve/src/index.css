@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 95%;
+    --foreground: 163 37% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 163 37% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 163 37% 14%;
+    --primary: 163 37% 15%;
+    --primary-foreground: 42 33% 96%;
+    --secondary: 110 18% 88%;
+    --secondary-foreground: 163 37% 14%;
+    --muted: 42 20% 90%;
+    --muted-foreground: 163 10% 38%;
+    --accent: 110 18% 90%;
+    --accent-foreground: 163 37% 14%;
+    --destructive: 6 65% 48%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 42 15% 84%;
+    --input: 42 12% 80%;
+    --ring: 163 37% 25%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body { font-family: Figtree, system-ui, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); }
+  :focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 3px; }
+}
+@layer utilities {
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .leader { flex: 1; border-bottom: 1px dotted hsl(var(--border)); margin: 0 .75rem .4rem; min-width: 1rem; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+}

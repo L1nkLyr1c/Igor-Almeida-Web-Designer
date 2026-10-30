@@ -19,6 +19,7 @@ Página única em HTML/CSS/JS, sem build. Tudo está no `index.html` (a foto é 
 - Número do WhatsApp: `5514998470667`.
 - Máscara do telefone: remove +55 e 0 inicial e limita a 11 dígitos. Fixo (10 dígitos) usa (00) 0000-0000.
 - Projetos na seção "Trabalhos recentes" são conceitos (negócios fictícios). O aviso fica no subtítulo da seção e no rodapé de cada página em `projetos/`; não apresentar como clientes reais.
+- As páginas em `projetos/` são geradas a partir de `_fonte/<projeto>/` (React + Tailwind + shadcn, empacotadas num HTML só pelo skill web-artifacts-builder). Não edite o HTML de `projetos/` à mão: edite a fonte e gere de novo (passo a passo em `_fonte/<projeto>/COMO-EDITAR.md`). Fotos ficam em `assets/projetos/<pasta>/*.webp`.
 - Os prints dos cards (`assets/projetos/*.jpg`) são gerados a partir das páginas em `projetos/`. Se mudar uma página, gere o print de novo (screenshot com fullPage: true, largura 1440 e altura até 2160, reduzido para 960 de largura mantendo a proporção).
 - Identidade visual: fundo `#0d0a14`, roxo `#9d5cff`, lilás `#c084fc`, fontes Sora (títulos) e Inter (texto).
 - Logo: `assets/logo/` (wordmark "igor.design" com o ponto como pixel roxo). As letras são vetores gerados da fonte Sora (800 em "igor", 400 em "design"); não troque por texto. Ícone "ig." em `icone.svg` e PNGs (32, 180, 192, 512 e `instagram-perfil.png`).
