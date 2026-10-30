@@ -197,6 +197,12 @@
     .about p { color: var(--muted); margin-top: 16px; font-size: 1.05rem; }
     .about p strong { color: var(--text); }
 
+    .about-list { list-style: none; margin-top: 22px; display: grid; gap: 12px; }
+    .about-list li { position: relative; padding-left: 30px; color: var(--muted); }
+    .about-list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--purple); font-weight: 700; }
+    .about-list strong { color: var(--text); }
+    .about-ctas { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; margin-top: 30px; }
+
     /* FAQ */
     .faq { max-width: 780px; margin-top: 40px; display: grid; gap: 12px; }
     details { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 0 22px; }
@@ -412,9 +418,16 @@
         <div class="reveal">
           <span class="eyebrow">Sobre mim</span>
           <h2 class="section-title">Prazer, eu sou o Igor</h2>
-          <p>Sou web designer e crio sites para <strong>pequenos negócios</strong> que querem ser levados a sério na internet.</p>
-          <p>Acredito que um site bom não é só bonito: ele precisa <strong>abrir rápido, funcionar no celular e fazer o cliente chamar</strong>. É nisso que eu foco em cada projeto.</p>
-          <p><a href="https://www.instagram.com/igoralmeida.design/" target="_blank" rel="noopener" class="grad" style="font-weight:600">@igoralmeida.design →</a></p>
+          <p>Sou web designer e trabalho direto com donos de <strong>pequenos negócios</strong>. Sem agência no meio, sem atendente e sem tecniquês.</p>
+          <ul class="about-list">
+            <li><strong>Você fala com quem faz o site.</strong> Do orçamento à entrega, é comigo.</li>
+            <li><strong>Você aprova antes de ir pro ar.</strong> Eu mostro cada etapa e ajusto com você.</li>
+            <li><strong>Tudo fica no seu nome.</strong> Domínio, hospedagem e acessos são seus.</li>
+          </ul>
+          <div class="about-ctas">
+            <a class="btn btn-primary js-wa" href="#" data-msg="Oi Igor! Vi seu site e quero conversar sobre um projeto.">Conversar comigo</a>
+            <a href="https://www.instagram.com/igoralmeida.design/" target="_blank" rel="noopener" class="grad" style="font-weight:600">Ver bastidores no Instagram →</a>
+          </div>
         </div>
       </div>
     </section>
