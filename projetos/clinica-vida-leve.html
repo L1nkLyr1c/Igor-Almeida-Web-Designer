@@ -1,66 +1,234 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Clínica Vida Leve | Projeto conceito por Igor Almeida</title><meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clínica Vida Leve | Projeto conceito por Igor Almeida</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--teal:#1f9e8b;--teal2:#16766a;--soft:#e8f6f3;--ink:#103a35;--muted:#5b716d;--line:#d9ebe7}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:"DM Sans",sans-serif;background:#fff;color:var(--ink);line-height:1.6}
-a{color:inherit;text-decoration:none}.w{width:min(1180px,100% - 32px);margin:auto}
-.top{background:var(--ink);color:#cfe9e4;font-size:13px}.top .w{display:flex;justify-content:space-between;padding:9px 0}
-nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-.logo{font-weight:700;font-size:24px;display:flex;align-items:center;gap:10px;color:var(--teal2)}
-.logo i{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#3cc2ad,var(--teal2));display:grid;place-items:center;color:#fff;font-style:normal;font-size:20px}
-.links{display:flex;gap:30px;color:var(--muted);font-size:15px}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;font-weight:700;padding:14px 24px;border-radius:999px;font-size:15px}
-.btn.o{background:#fff;color:var(--teal2);border:1.5px solid var(--line)}
-.hero{background:linear-gradient(180deg,var(--soft),#fff)}
-.hero .w{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding:70px 0 90px}
-.pill{display:inline-block;background:#fff;border:1px solid var(--line);color:var(--teal2);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:500;margin-bottom:22px}
-h1{font-size:58px;line-height:1.08;letter-spacing:-.02em}h1 span{color:var(--teal)}
-.hero p{color:var(--muted);font-size:19px;margin:22px 0 32px;max-width:500px}
-.row{display:flex;gap:12px;flex-wrap:wrap}
-.trust{display:flex;align-items:center;gap:14px;margin-top:34px;color:var(--muted);font-size:14px}
-.av{display:flex}.av span{width:38px;height:38px;border-radius:50%;border:3px solid #fff;margin-left:-10px;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px}
-.av span:first-child{margin-left:0}
-.art{position:relative;height:460px}
-.blob{position:absolute;inset:0 0 0 40px;border-radius:40% 60% 55% 45%/50% 45% 55% 50%;background:radial-gradient(circle at 30% 30%,#7fdccb,var(--teal) 60%,var(--teal2))}
-.cardx{position:absolute;background:#fff;border-radius:18px;box-shadow:0 20px 50px -20px rgba(16,58,53,.35);padding:18px 20px;font-size:14px}
-.c1{left:0;top:40px;width:250px}.c1 b{display:block;font-size:20px;margin-top:4px}
-.c2{right:0;bottom:50px;width:270px;display:flex;gap:12px;align-items:center}
-.c2 .d{width:46px;height:46px;border-radius:50%;background:#f4b860;display:grid;place-items:center;color:#fff;font-weight:700}
-.c3{left:60px;bottom:10px;display:flex;gap:8px;align-items:center;font-weight:700;color:var(--teal2)}
-.ok{width:10px;height:10px;border-radius:50%;background:#22c55e;display:inline-block}
-section{padding:90px 0}.eyebrow{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:.15em;text-transform:uppercase}
-h2{font-size:42px;letter-spacing:-.02em;margin:8px 0 40px}
-.spec{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.spec div{border:1px solid var(--line);border-radius:20px;padding:26px}
-.ic{width:52px;height:52px;border-radius:14px;background:var(--soft);display:grid;place-items:center;margin-bottom:18px}
-.ic svg{width:26px;height:26px;stroke:var(--teal2);fill:none;stroke-width:2}
-.spec h3{font-size:19px;margin-bottom:6px}.spec p{color:var(--muted);font-size:14px}
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.team article{background:var(--soft);border-radius:22px;padding:26px;display:flex;gap:16px;align-items:center}
-.team .d{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:700;font-size:22px;flex-shrink:0}
-.team h3{font-size:18px}.team p{color:var(--muted);font-size:14px}
-.cta{background:var(--ink);color:#fff;border-radius:28px;padding:50px;display:flex;justify-content:space-between;align-items:center;gap:30px}
-.cta h2{margin:0;font-size:36px}.cta p{color:#a9cfc8}
-footer{padding:36px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--line);margin-top:90px}
-.note{position:fixed;left:16px;bottom:16px;background:#fffd;border:1px solid var(--line);padding:8px 12px;border-radius:8px;font-size:12px;color:var(--muted)}
-@media(max-width:860px){.hero .w,.spec,.team{grid-template-columns:1fr}.art{display:none}h1{font-size:40px}.links{display:none}.cta{flex-direction:column;align-items:flex-start}}
-</style></head><body>
-<div class="top"><div class="w"><span>📞 (00) 3000-0000 · WhatsApp (00) 90000-0000</span><span>Seg a sex 7h–19h · Sáb 8h–12h</span></div></div>
-<header class="w"><nav><a class="logo"><i>+</i>vida leve</a><div class="links"><a>Especialidades</a><a>Equipe</a><a>Convênios</a><a>Como chegar</a></div><a class="btn">Marcar consulta</a></nav></header>
-<div class="hero"><div class="w"><div><span class="pill">Atendimento particular e convênios</span><h1>Cuidado que você sente, <span>do primeiro contato ao retorno.</span></h1><p>Consultas, exames e acompanhamento em um só lugar, com horários que cabem na sua rotina.</p><div class="row"><a class="btn">Marcar consulta</a><a class="btn o">Ver especialidades</a></div><div class="trust"><div class="av"><span style="background:#1f9e8b">AR</span><span style="background:#f4b860">LC</span><span style="background:#6b8cff">PM</span></div>Equipe com 8 especialidades</div></div>
-<div class="art"><div class="blob"></div><div class="cardx c1">Próximo horário disponível<b>Hoje, 16:30</b><span style="color:var(--muted)">Clínica geral</span></div><div class="cardx c2"><span class="d">LC</span><div><b>Dra. Luana Costa</b><br><span style="color:var(--muted)">Dermatologia</span></div></div><div class="cardx c3"><span class="ok"></span> Confirmação pelo WhatsApp</div></div></div></div>
-<section class="w"><span class="eyebrow">Especialidades</span><h2>Como podemos cuidar de você</h2><div class="spec">
-<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></span><h3>Cardiologia</h3><p>Check-up, eletrocardiograma e acompanhamento.</p></div>
-<div><span class="ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></span><h3>Dermatologia</h3><p>Pele, cabelo e unhas, clínica e estética.</p></div>
-<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></span><h3>Clínica geral</h3><p>Consultas de rotina e encaminhamentos.</p></div>
-<div><span class="ic"><svg viewBox="0 0 24 24"><path d="M7 3c-2 2-2 6 0 9s2 7 0 9M17 3c2 2 2 6 0 9s-2 7 0 9"/></svg></span><h3>Nutrição</h3><p>Planos alimentares e reeducação.</p></div></div></section>
-<section class="w" style="padding-top:0"><span class="eyebrow">Equipe</span><h2>Profissionais que escutam</h2><div class="team">
-<article><span class="d" style="background:#1f9e8b">AR</span><div><h3>Dra. Ana Ribeiro</h3><p>Clínica geral</p></div></article>
-<article><span class="d" style="background:#f4b860">LC</span><div><h3>Dra. Luana Costa</h3><p>Dermatologia</p></div></article>
-<article><span class="d" style="background:#6b8cff">PM</span><div><h3>Dr. Paulo Moura</h3><p>Cardiologia</p></div></article></div></section>
-<section class="w" style="padding:0"><div class="cta"><div><h2>Marque sua consulta em 1 minuto</h2><p>Escolha o horário pelo site e receba a confirmação no WhatsApp.</p></div><a class="btn" style="background:#3cc2ad">Agendar agora</a></div></section>
-<footer><div class="w">© Clínica Vida Leve · Responsável técnico: CRM 000000</div></footer>
-<div class="note">Projeto conceito · negócio fictício · design por Igor Almeida</div>
-</body></html>
+  :root {
+    --bg: #fbf8f3;
+    --sand: #f3ece1;
+    --mint: #d8efe7;
+    --teal: #1f8a78;
+    --teal-2: #136a5c;
+    --peach: #f6c9a8;
+    --lilac: #dcd6f7;
+    --ink: #1d3330;
+    --muted: #61736f;
+    --line: #e6ded1;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--ink); line-height: 1.65; overflow-x: clip; }
+  a { color: inherit; text-decoration: none; }
+  .w { width: min(1180px, 100% - 40px); margin: auto; }
+  h1, h2, h3 { font-family: Fraunces, serif; font-weight: 500; letter-spacing: -.02em; line-height: 1.1; }
+  em { font-style: italic; color: var(--teal); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 26px; border-radius: 999px; font-weight: 700; font-size: .98rem; transition: transform .2s, box-shadow .2s; font-family: inherit; border: 0; cursor: pointer; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-main { background: var(--teal); color: #fff; box-shadow: 0 12px 30px -12px rgba(31,138,120,.6); }
+  .btn-soft { background: #fff; color: var(--teal-2); border: 1.5px solid var(--line); }
+
+  /* topo */
+  .top { background: var(--teal-2); color: #d9f1ea; font-size: .85rem; }
+  .top .w { display: flex; justify-content: space-between; padding: 9px 0; gap: 16px; flex-wrap: wrap; }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: Fraunces, serif; font-size: 1.5rem; font-weight: 600; color: var(--teal-2); }
+  .logo svg { width: 36px; height: 36px; }
+  .links { display: flex; gap: 32px; color: var(--muted); font-weight: 500; }
+  .links a:hover { color: var(--teal); }
+
+  /* hero */
+  .hero { position: relative; padding: 40px 0 110px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 50px; align-items: center; }
+  .pill { display: inline-flex; align-items: center; gap: 8px; background: var(--mint); color: var(--teal-2); padding: 8px 16px; border-radius: 999px; font-size: .88rem; font-weight: 700; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(2.8rem, 6vw, 4.9rem); }
+  .hero p { color: var(--muted); font-size: 1.18rem; margin: 24px 0 34px; max-width: 520px; }
+  .hero .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .trust { display: flex; gap: 28px; margin-top: 42px; flex-wrap: wrap; }
+  .trust div { font-size: .9rem; color: var(--muted); }
+  .trust b { display: block; font-family: Fraunces, serif; font-size: 1.9rem; color: var(--ink); font-weight: 500; }
+
+  .art { position: relative; height: 560px; }
+  .blob { position: absolute; border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%; }
+  .b1 { inset: 40px 20px 30px 60px; background: linear-gradient(150deg, #9ad8c7, var(--teal)); animation: morph 12s ease-in-out infinite; }
+  .b2 { width: 180px; height: 180px; right: 0; top: 0; background: var(--peach); animation: morph 9s ease-in-out infinite reverse; }
+  .b3 { width: 120px; height: 120px; left: 10px; bottom: 20px; background: var(--lilac); }
+  @keyframes morph { 50% { border-radius: 58% 42% 40% 60% / 44% 58% 42% 56%; } }
+  .art svg.leaf { position: absolute; left: 30%; top: 22%; width: 46%; }
+  .float { position: absolute; background: #fff; border-radius: 20px; padding: 16px 20px; box-shadow: 0 24px 50px -24px rgba(29,51,48,.35); font-size: .9rem; display: flex; gap: 12px; align-items: center; }
+  .float .ico { width: 42px; height: 42px; border-radius: 14px; display: grid; place-items: center; flex-shrink: 0; }
+  .f1 { left: 0; top: 70px; } .f1 .ico { background: var(--mint); }
+  .f2 { right: -10px; bottom: 90px; } .f2 .ico { background: var(--sand); }
+  .float b { display: block; font-size: 1rem; }
+  .float small { color: var(--muted); }
+
+  section { padding: 110px 0; }
+  .eyebrow { display: inline-block; font-weight: 700; color: var(--teal); letter-spacing: .14em; text-transform: uppercase; font-size: .8rem; margin-bottom: 14px; }
+  h2 { font-size: clamp(2.2rem, 4.5vw, 3.4rem); }
+  .lead { color: var(--muted); font-size: 1.1rem; max-width: 560px; margin-top: 16px; }
+
+  /* especialidades */
+  .spec-wrap { background: var(--sand); border-radius: 48px; padding: 90px 0; margin: 0 20px; }
+  .spec { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 50px; }
+  .spec article { background: #fff; border-radius: 28px; padding: 30px 26px; transition: transform .25s, box-shadow .25s; }
+  .spec article:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgba(29,51,48,.3); }
+  .spec .ico { width: 58px; height: 58px; border-radius: 18px; display: grid; place-items: center; margin-bottom: 22px; }
+  .spec .ico svg { width: 28px; height: 28px; fill: none; stroke: var(--ink); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .spec h3 { font-size: 1.35rem; margin-bottom: 8px; }
+  .spec p { color: var(--muted); font-size: .95rem; }
+  .spec a { display: inline-block; margin-top: 14px; color: var(--teal); font-weight: 700; font-size: .92rem; }
+
+  /* jornada */
+  .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 60px; position: relative; }
+  .journey::before { content: ""; position: absolute; top: 31px; left: 12%; right: 12%; border-top: 2px dashed #c9d9d3; }
+  .stop { text-align: center; padding: 0 18px; position: relative; }
+  .stop .n { width: 64px; height: 64px; border-radius: 50%; background: var(--bg); border: 2px solid var(--teal); display: grid; place-items: center; margin: 0 auto 22px; font-family: Fraunces, serif; font-size: 1.5rem; color: var(--teal); }
+  .stop:last-child .n { background: var(--teal); color: #fff; }
+  .stop h3 { font-size: 1.25rem; margin-bottom: 6px; }
+  .stop p { color: var(--muted); font-size: .95rem; }
+
+  /* equipe */
+  .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+  .doc { background: #fff; border: 1px solid var(--line); border-radius: 32px; overflow: hidden; }
+  .doc .ph { height: 240px; display: grid; place-items: end center; position: relative; }
+  .doc .ph svg { width: 62%; }
+  .doc .body { padding: 24px 26px 28px; }
+  .doc h3 { font-size: 1.35rem; }
+  .doc span { color: var(--teal); font-weight: 700; font-size: .9rem; }
+  .doc p { color: var(--muted); font-size: .93rem; margin-top: 8px; }
+
+  /* faq */
+  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 70px; }
+  details { border-bottom: 1px solid var(--line); padding: 22px 0; }
+  summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; font-family: Fraunces, serif; font-size: 1.25rem; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; width: 34px; height: 34px; border-radius: 50%; background: var(--mint); color: var(--teal-2); display: grid; place-items: center; flex-shrink: 0; font-family: "DM Sans"; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { color: var(--muted); margin-top: 12px; max-width: 600px; }
+
+  /* cta */
+  .cta { background: var(--teal-2); color: #fff; border-radius: 48px; padding: 70px; display: grid; grid-template-columns: 1.3fr .7fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .cta::after { content: ""; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,.07); }
+  .cta h2 { color: #fff; }
+  .cta p { color: #bfe3d9; margin-top: 14px; }
+  .cta .btn { background: #fff; color: var(--teal-2); justify-self: end; position: relative; z-index: 1; }
+
+  footer { padding: 70px 0 40px; color: var(--muted); font-size: .92rem; }
+  .foot { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 30px; }
+  .note-c { position: fixed; left: 16px; bottom: 16px; z-index: 50; background: rgba(255,255,255,.92); border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; font-size: .75rem; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .links { display: none; }
+    .hero-grid, .faq-grid, .cta { grid-template-columns: 1fr; }
+    .art { height: 400px; }
+    .spec, .team { grid-template-columns: 1fr; }
+    .journey { grid-template-columns: 1fr 1fr; gap: 40px 0; }
+    .journey::before { display: none; }
+    .spec-wrap, .cta { border-radius: 30px; margin: 0; }
+    .cta { padding: 40px 28px; }
+    .cta .btn { justify-self: start; }
+    section { padding: 80px 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top"><div class="w"><span>Seg a sex 7h–19h · Sáb 8h–12h</span><span>Particular e principais convênios</span></div></div>
+<header>
+  <nav class="w">
+    <a href="#" class="logo"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#d8efe7"/><path d="M20 29 C12 23 10 17 14 13 c3 -3 6 -1 6 2 c0 -3 3 -5 6 -2 c4 4 2 10 -6 16z" fill="#1f8a78"/></svg>vida leve</a>
+    <div class="links"><a href="#especialidades">Especialidades</a><a href="#como">Como funciona</a><a href="#equipe">Equipe</a><a href="#duvidas">Dúvidas</a></div>
+    <a href="#agendar" class="btn btn-main">Marcar consulta</a>
+  </nav>
+</header>
+
+<section class="hero" style="padding-top:40px">
+  <div class="w hero-grid">
+    <div>
+      <span class="pill">🌿 Saúde sem pressa</span>
+      <h1>Um lugar para <em>cuidar de você</em> com calma.</h1>
+      <p>Consultas, exames e acompanhamento no mesmo endereço, com uma equipe que lembra o seu nome e explica cada passo.</p>
+      <div class="row"><a href="#agendar" class="btn btn-main">Marcar consulta</a><a href="#especialidades" class="btn btn-soft">Conhecer especialidades</a></div>
+      <div class="trust"><div><b>8</b>especialidades</div><div><b>1</b>endereço só</div><div><b>Hoje</b>horários disponíveis</div></div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+      <svg class="leaf" viewBox="0 0 200 200" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M100 170 C40 130 30 70 70 40 C100 20 130 40 130 70 C130 40 160 30 175 55 C195 95 160 140 100 170Z" fill="rgba(255,255,255,.18)"/><path d="M100 170 C105 120 115 90 140 60"/><path d="M110 120 l-25 -18"/><path d="M118 95 l22 -8"/></svg>
+      <div class="float f1"><span class="ico">📅</span><div><b>Hoje, 16:30</b><small>Próximo horário · Clínica geral</small></div></div>
+      <div class="float f2"><span class="ico">💬</span><div><b>Confirmação no WhatsApp</b><small>Lembrete 1 dia antes</small></div></div>
+    </div>
+  </div>
+</section>
+
+<div id="especialidades" class="spec-wrap">
+  <div class="w">
+    <span class="eyebrow">Especialidades</span>
+    <h2>Do check-up ao <em>acompanhamento</em></h2>
+    <p class="lead">Cada área com profissionais dedicados e a mesma recepção acolhedora.</p>
+    <div class="spec">
+      <article><div class="ico" style="background:var(--mint)"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8z"/></svg></div><h3>Cardiologia</h3><p>Check-up, eletrocardiograma e acompanhamento da pressão.</p><a href="#agendar">Agendar →</a></article>
+      <article><div class="ico" style="background:#fde6d6"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg></div><h3>Dermatologia</h3><p>Pele, cabelo e unhas, do clínico ao estético.</p><a href="#agendar">Agendar →</a></article>
+      <article><div class="ico" style="background:var(--lilac)"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Clínica geral</h3><p>Consultas de rotina, exames e encaminhamentos.</p><a href="#agendar">Agendar →</a></article>
+      <article><div class="ico" style="background:#e8f2d4"><svg viewBox="0 0 24 24"><path d="M12 21c-5-3-8-7-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 11z"/></svg></div><h3>Nutrição</h3><p>Plano alimentar possível, sem dieta impossível.</p><a href="#agendar">Agendar →</a></article>
+    </div>
+  </div>
+</div>
+
+<section id="como">
+  <div class="w" style="text-align:center">
+    <span class="eyebrow">Como funciona</span>
+    <h2>Simples do <em>começo ao fim</em></h2>
+    <div class="journey">
+      <div class="stop"><div class="n">1</div><h3>Agende</h3><p>Pelo site ou WhatsApp, em menos de um minuto.</p></div>
+      <div class="stop"><div class="n">2</div><h3>Receba o lembrete</h3><p>Confirmação e aviso um dia antes.</p></div>
+      <div class="stop"><div class="n">3</div><h3>Seja atendido</h3><p>Consulta com tempo para tirar dúvidas.</p></div>
+      <div class="stop"><div class="n">✓</div><h3>Acompanhamento</h3><p>Retorno marcado e resultados pelo WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="equipe" style="padding-top:0">
+  <div class="w">
+    <span class="eyebrow">Equipe</span>
+    <h2>Gente que <em>escuta</em></h2>
+    <div class="team">
+      <article class="doc"><div class="ph" style="background:var(--mint)"><svg viewBox="0 0 120 100"><circle cx="60" cy="40" r="22" fill="#f2d3bd"/><path d="M38 38 q22 -34 44 0 q-4 -24 -22 -24 q-18 0 -22 24z" fill="#5a3b2a"/><path d="M20 100 q40 -52 80 0z" fill="#fff"/><path d="M52 62 l8 14 l8 -14" fill="none" stroke="#1f8a78" stroke-width="3"/></svg></div><div class="body"><h3>Dra. Ana Ribeiro</h3><span>Clínica geral</span><p>Atende adultos e idosos, com foco em prevenção.</p></div></article>
+      <article class="doc"><div class="ph" style="background:#fde6d6"><svg viewBox="0 0 120 100"><circle cx="60" cy="40" r="22" fill="#c98d6b"/><path d="M36 44 q2 -36 24 -36 q22 0 24 36 q-6 -18 -24 -20 q-18 2 -24 20z" fill="#2b1d16"/><path d="M20 100 q40 -52 80 0z" fill="#fff"/></svg></div><div class="body"><h3>Dra. Luana Costa</h3><span>Dermatologia</span><p>Dermatologia clínica e estética, sem exageros.</p></div></article>
+      <article class="doc"><div class="ph" style="background:var(--lilac)"><svg viewBox="0 0 120 100"><circle cx="60" cy="40" r="22" fill="#e8bf9f"/><path d="M40 32 q20 -20 40 0 v-4 q-20 -16 -40 0z" fill="#3b3b3b"/><path d="M20 100 q40 -52 80 0z" fill="#fff"/><circle cx="60" cy="80" r="5" fill="none" stroke="#1f8a78" stroke-width="3"/></svg></div><div class="body"><h3>Dr. Paulo Moura</h3><span>Cardiologia</span><p>Check-up cardiológico e acompanhamento contínuo.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" style="padding-top:0">
+  <div class="w faq-grid">
+    <div><span class="eyebrow">Dúvidas</span><h2>Antes de <em>marcar</em></h2><p class="lead">Se ficar alguma dúvida, a recepção responde no WhatsApp.</p></div>
+    <div>
+      <details open><summary>Vocês atendem convênio?</summary><p>Sim, os principais convênios da região, além de atendimento particular com valores acessíveis.</p></details>
+      <details><summary>Consigo consulta no mesmo dia?</summary><p>Na maioria dos dias, sim. Os horários livres aparecem na hora em que você agenda.</p></details>
+      <details><summary>Preciso levar algo na primeira consulta?</summary><p>Documento com foto, carteirinha do convênio (se tiver) e exames recentes.</p></details>
+      <details><summary>Tem estacionamento?</summary><p>Sim, gratuito para pacientes, com acesso pela rua lateral.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="agendar" style="padding-top:0">
+  <div class="w">
+    <div class="cta">
+      <div><h2>Sua consulta em um minuto</h2><p>Escolha a especialidade e o horário. A confirmação chega no seu WhatsApp.</p></div>
+      <a href="#" class="btn">Agendar agora →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="w foot"><span>© Clínica Vida Leve · Responsável técnico CRM 000000</span><span>Rua das Acácias, 450 · Bauru/SP</span></div>
+</footer>
+
+<div class="note-c">Projeto conceito · negócio fictício · design por Igor Almeida</div>
+</body>
+</html>

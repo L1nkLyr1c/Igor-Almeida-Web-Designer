@@ -1,68 +1,290 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Barbearia Navalha | Projeto conceito por Igor Almeida</title><meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbearia Navalha | Projeto conceito por Igor Almeida</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0f0f0f;--card:#181818;--line:#2a2a2a;--gold:#c9a24a;--gold2:#e2c27a;--text:#f2efe8;--muted:#a19d93}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-a{color:inherit;text-decoration:none}.w{width:min(1180px,100% - 32px);margin:auto}
-h1,h2,h3,.logo{font-family:Oswald,sans-serif;text-transform:uppercase;letter-spacing:.02em;line-height:1.05}
-nav{display:flex;align-items:center;justify-content:space-between;height:84px}
-.logo{font-size:26px;letter-spacing:.18em}.logo span{color:var(--gold)}
-.links{display:flex;gap:34px;color:var(--muted);font-size:15px}
-.btn{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:#111;font-weight:600;padding:14px 26px;border-radius:4px;font-size:15px}
-.btn.o{background:transparent;color:var(--text);border:1px solid var(--line)}
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(201,162,74,.06) 0 2px,transparent 2px 22px),radial-gradient(circle at 75% 40%,rgba(201,162,74,.18),transparent 55%)}
-.hero .w{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:center;padding:80px 0 100px}
-.kick{color:var(--gold);font-size:14px;letter-spacing:.3em;text-transform:uppercase;margin-bottom:20px;display:block}
-h1{font-size:88px}h1 em{font-style:normal;color:var(--gold)}
-.hero p{color:var(--muted);font-size:19px;max-width:520px;margin:26px 0 36px}
-.row{display:flex;gap:14px;flex-wrap:wrap}
-.stats{display:flex;gap:40px;margin-top:48px;color:var(--muted);font-size:14px}.stats b{display:block;font-family:Oswald;font-size:30px;color:var(--text)}
-.book{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:28px}
-.book h3{font-size:22px;margin-bottom:6px}.book small{color:var(--muted)}
-.days{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:22px 0}
-.days div{border:1px solid var(--line);border-radius:6px;text-align:center;padding:10px 0;font-size:13px;color:var(--muted)}
-.days div b{display:block;color:var(--text);font-size:18px;font-family:Oswald}
-.days .on{border-color:var(--gold);background:rgba(201,162,74,.12)}
-.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.slots span{border:1px solid var(--line);border-radius:6px;padding:10px;text-align:center;font-size:14px}
-.slots .x{opacity:.3;text-decoration:line-through}.slots .on{background:var(--gold);color:#111;font-weight:600;border-color:var(--gold)}
-.book .btn{width:100%;justify-content:center;margin-top:22px}
-section{padding:100px 0}h2{font-size:52px;margin-bottom:46px}h2 span{color:var(--gold)}
-.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 70px}
-.svc div{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 0;border-bottom:1px dashed var(--line)}
-.svc h3{font-size:22px}.svc p{color:var(--muted);font-size:14px;font-family:Inter;text-transform:none}
-.svc b{font-family:Oswald;font-size:26px;color:var(--gold);white-space:nowrap}
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.team article{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.ph{height:260px;background:linear-gradient(160deg,#2b2620,#121212);display:grid;place-items:center;font-family:Oswald;font-size:90px;color:rgba(201,162,74,.35)}
-.team div.t{padding:20px}.team h3{font-size:22px}.team p{color:var(--muted);font-size:14px}
-.info{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.info>div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:34px}
-.info li{list-style:none;display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);color:var(--muted)}.info li b{color:var(--text);font-weight:500}
-.map{height:220px;border-radius:6px;margin-top:18px;background:linear-gradient(#1c1c1c 1px,transparent 1px) 0 0/34px 34px,linear-gradient(90deg,#1c1c1c 1px,#141414 1px) 0 0/34px 34px;position:relative}
-.map:after{content:"";position:absolute;left:50%;top:45%;width:22px;height:22px;background:var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
-footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:13px}
-.note{position:fixed;left:16px;bottom:16px;background:#000c;border:1px solid var(--line);padding:8px 12px;border-radius:6px;font-size:12px;color:var(--muted)}
-@media(max-width:860px){.hero .w,.svc,.team,.info{grid-template-columns:1fr}h1{font-size:56px}.links{display:none}}
-</style></head><body>
-<header class="w"><nav><a class="logo">Nava<span>l</span>ha</a><div class="links"><a>Serviços</a><a>Barbeiros</a><a>Horários</a><a>Contato</a></div><a class="btn">Agendar</a></nav></header>
-<div class="hero"><div class="w"><div><span class="kick">Barbearia · desde 2015</span><h1>Seu corte<br>no <em>seu horário</em></h1><p>Agende em menos de um minuto, escolha seu barbeiro e chegue só na hora. Sem fila, sem espera.</p><div class="row"><a class="btn">Agendar pelo WhatsApp</a><a class="btn o">Ver serviços</a></div><div class="stats"><div><b>4.9★</b>Avaliação no Google</div><div><b>3</b>Barbeiros</div><div><b>Seg–Sáb</b>9h às 20h</div></div></div>
-<div class="book"><h3>Agende seu horário</h3><small>Corte + barba · com Rafael</small><div class="days"><div>Seg<b>03</b></div><div class="on">Ter<b>04</b></div><div>Qua<b>05</b></div><div>Qui<b>06</b></div><div>Sex<b>07</b></div></div><div class="slots"><span class="x">09:00</span><span>09:45</span><span class="x">10:30</span><span class="on">11:15</span><span>14:00</span><span>14:45</span><span class="x">15:30</span><span>16:15</span><span>17:00</span></div><a class="btn">Confirmar 11:15 →</a></div></div></div>
-<section class="w"><h2>Serviços <span>&amp;</span> preços</h2><div class="svc">
-<div><span><h3>Corte</h3><p>Tesoura ou máquina, com lavagem</p></span><b>R$ 45</b></div>
-<div><span><h3>Barba</h3><p>Toalha quente e navalha</p></span><b>R$ 35</b></div>
-<div><span><h3>Corte + barba</h3><p>O combo mais pedido</p></span><b>R$ 70</b></div>
-<div><span><h3>Pigmentação</h3><p>Barba ou cabelo</p></span><b>R$ 40</b></div>
-<div><span><h3>Sobrancelha</h3><p>Na navalha</p></span><b>R$ 15</b></div>
-<div><span><h3>Corte infantil</h3><p>Até 10 anos</p></span><b>R$ 35</b></div></div></section>
-<section class="w" style="padding-top:0"><h2>Nossos <span>barbeiros</span></h2><div class="team">
-<article><div class="ph">R</div><div class="t"><h3>Rafael</h3><p>Degradê e barba clássica</p></div></article>
-<article><div class="ph">D</div><div class="t"><h3>Diego</h3><p>Cortes modernos e freestyle</p></div></article>
-<article><div class="ph">M</div><div class="t"><h3>Marcos</h3><p>Tesoura e cabelos longos</p></div></article></div></section>
-<section class="w" style="padding-top:0"><div class="info"><div><h2 style="font-size:34px;margin-bottom:20px">Horários</h2><ul><li>Segunda a sexta <b>9h – 20h</b></li><li>Sábado <b>9h – 18h</b></li><li>Domingo <b>Fechado</b></li></ul></div><div><h2 style="font-size:34px;margin-bottom:6px">Onde estamos</h2><p style="color:var(--muted)">Rua das Palmeiras, 120 · Centro</p><div class="map"></div></div></div></section>
-<footer><div class="w">© Barbearia Navalha</div></footer>
-<div class="note">Projeto conceito · negócio fictício · design por Igor Almeida</div>
-</body></html>
+  :root {
+    --bg: #0e0d0b;
+    --bg-2: #161411;
+    --card: #1c1915;
+    --line: #2e2a23;
+    --gold: #c9a24a;
+    --gold-2: #e6c77e;
+    --cream: #f1e9d8;
+    --muted: #9b9385;
+    --red: #a8322b;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { font-family: Inter, sans-serif; background: var(--bg); color: var(--cream); line-height: 1.6; overflow-x: clip; }
+  a { color: inherit; text-decoration: none; }
+  .w { width: min(1200px, 100% - 40px); margin: auto; }
+  .display { font-family: Anton, sans-serif; text-transform: uppercase; letter-spacing: .01em; line-height: .92; font-weight: 400; }
+  .serif { font-family: "Playfair Display", serif; font-style: italic; font-weight: 600; text-transform: none; letter-spacing: 0; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-weight: 600; font-size: .95rem; letter-spacing: .04em; text-transform: uppercase; border: 1px solid var(--gold); transition: background .2s, color .2s; cursor: pointer; font-family: inherit; }
+  .btn-gold { background: var(--gold); color: #111; }
+  .btn-gold:hover { background: var(--gold-2); }
+  .btn-line { color: var(--cream); background: transparent; }
+  .btn-line:hover { background: var(--gold); color: #111; }
+
+  /* grão */
+  body::before { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 100; opacity: .07;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* topo */
+  header { position: absolute; top: 0; left: 0; right: 0; z-index: 10; }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
+  .logo { display: flex; align-items: center; gap: 12px; }
+  .logo svg { width: 38px; height: 38px; }
+  .logo b { font-family: Anton, sans-serif; font-size: 1.5rem; letter-spacing: .22em; font-weight: 400; }
+  .links { display: flex; gap: 36px; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .links a:hover { color: var(--gold); }
+
+  /* hero */
+  .hero { position: relative; min-height: 100vh; display: grid; align-items: end; padding: 140px 0 70px; overflow: hidden;
+    background:
+      radial-gradient(ellipse at 78% 35%, rgba(201,162,74,.22), transparent 55%),
+      linear-gradient(180deg, #0e0d0b 0%, #14110d 100%); }
+  .pole { position: absolute; right: 2.5%; top: 0; bottom: 0; width: 64px; opacity: .9;
+    background: repeating-linear-gradient(135deg, var(--cream) 0 22px, var(--red) 22px 44px, var(--cream) 44px 66px, #1d3a6b 66px 88px);
+    animation: pole 3s linear infinite; mask-image: linear-gradient(180deg, transparent, #000 15%, #000 85%, transparent); }
+  @keyframes pole { to { background-position: 0 125px; } }
+  .hero-grid { position: relative; display: grid; grid-template-columns: 1.4fr .9fr; gap: 40px; align-items: end; }
+  .kicker { display: inline-flex; align-items: center; gap: 14px; color: var(--gold); font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; margin-bottom: 26px; }
+  .kicker::before { content: ""; width: 48px; height: 1px; background: var(--gold); }
+  .hero h1 { font-size: clamp(4rem, 11vw, 10.5rem); }
+  .hero h1 .serif { color: var(--gold); font-size: .62em; display: block; margin: 10px 0 6px 6px; }
+  .hero p { color: var(--muted); max-width: 470px; font-size: 1.1rem; margin: 30px 0 38px; }
+  .hero .row { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-card { background: rgba(28,25,21,.85); border: 1px solid var(--line); padding: 30px; backdrop-filter: blur(6px); }
+  .hero-card .num { font-family: Anton, sans-serif; font-size: 3.6rem; color: var(--gold); line-height: 1; }
+  .hero-card .small { color: var(--muted); font-size: .9rem; }
+  .hero-card hr { border: 0; border-top: 1px solid var(--line); margin: 22px 0; }
+  .hero-card .open { display: flex; align-items: center; gap: 10px; font-size: .9rem; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 10px #4ade80; }
+
+  /* faixa */
+  .marquee { background: var(--gold); color: #111; overflow: hidden; white-space: nowrap; border-block: 1px solid #000; }
+  .marquee div { display: inline-block; padding: 18px 0; animation: mq 22s linear infinite; font-family: Anton, sans-serif; font-size: 1.6rem; text-transform: uppercase; letter-spacing: .06em; }
+  .marquee span { margin: 0 28px; }
+  @keyframes mq { to { transform: translateX(-50%); } }
+
+  section { padding: 120px 0; }
+  .eyebrow { color: var(--gold); font-size: .8rem; letter-spacing: .3em; text-transform: uppercase; margin-bottom: 18px; display: block; }
+  h2.display { font-size: clamp(3rem, 7vw, 5.8rem); }
+
+  /* serviços estilo quadro */
+  .menu-wrap { display: grid; grid-template-columns: .8fr 1.2fr; gap: 80px; align-items: start; }
+  .menu-wrap .note { color: var(--muted); margin-top: 24px; max-width: 360px; }
+  .board { border: 1px solid var(--line); background: var(--bg-2); padding: 14px 40px; }
+  .item { display: grid; grid-template-columns: 1fr auto; align-items: baseline; gap: 18px; padding: 26px 0; border-bottom: 1px dashed var(--line); }
+  .item:last-child { border-bottom: 0; }
+  .item h3 { font-family: Anton, sans-serif; font-weight: 400; font-size: 1.7rem; text-transform: uppercase; letter-spacing: .03em; }
+  .item p { color: var(--muted); font-size: .92rem; grid-column: 1; }
+  .item .price { font-family: "Playfair Display", serif; font-style: italic; color: var(--gold); font-size: 1.8rem; grid-row: 1 / span 2; grid-column: 2; align-self: center; }
+  .item .time { font-size: .75rem; letter-spacing: .15em; color: var(--gold-2); text-transform: uppercase; margin-left: 10px; vertical-align: middle; font-family: Inter; }
+
+  /* galeria */
+  .gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 220px; gap: 14px; margin-top: 50px; }
+  .tile { position: relative; overflow: hidden; border: 1px solid var(--line); display: flex; align-items: flex-end; padding: 20px; }
+  .tile span { position: relative; font-size: .78rem; letter-spacing: .2em; text-transform: uppercase; color: var(--cream); }
+  .tile.big { grid-column: span 2; grid-row: span 2; }
+  .tile.wide { grid-column: span 2; }
+  .t1 { background: radial-gradient(circle at 30% 30%, #4a3a20, #1a150e 70%); }
+  .t2 { background: linear-gradient(135deg, #2b2116, #0f0d0a); }
+  .t3 { background: repeating-linear-gradient(90deg, #1b1712 0 18px, #221d16 18px 36px); }
+  .t4 { background: radial-gradient(circle at 70% 60%, #6b4e22, #15120d 65%); }
+  .t5 { background: linear-gradient(200deg, #3a2c18, #120f0b); }
+  .tile svg { position: absolute; right: 20px; top: 20px; width: 42%; opacity: .5; }
+
+  /* barbeiros */
+  .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+  .barber { border: 1px solid var(--line); background: var(--card); }
+  .portrait { height: 300px; display: grid; place-items: center; position: relative; overflow: hidden; background: linear-gradient(170deg, #2b241a, #0f0d0a); }
+  .portrait svg { width: 62%; }
+  .portrait b { position: absolute; left: 22px; bottom: 6px; font-family: Anton, sans-serif; font-weight: 400; font-size: 5.5rem; color: rgba(201,162,74,.12); line-height: 1; }
+  .barber .info { padding: 24px; }
+  .barber h3 { font-family: Anton, sans-serif; font-weight: 400; font-size: 1.6rem; text-transform: uppercase; letter-spacing: .04em; }
+  .barber p { color: var(--muted); font-size: .92rem; }
+  .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .tags span { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--line); padding: 5px 10px; color: var(--gold-2); }
+
+  /* agendamento */
+  .book { background: var(--bg-2); border-block: 1px solid var(--line); }
+  .book-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 70px; align-items: center; }
+  .widget { background: var(--card); border: 1px solid var(--line); padding: 36px; }
+  .step { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+  .chips { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+  .chip { border: 1px solid var(--line); background: transparent; color: var(--cream); padding: 10px 16px; font: inherit; font-size: .9rem; cursor: pointer; transition: .15s; }
+  .chip:hover { border-color: var(--gold); }
+  .chip.on { background: var(--gold); color: #111; border-color: var(--gold); font-weight: 600; }
+  .chip.off { opacity: .3; text-decoration: line-through; pointer-events: none; }
+  .days .chip { display: grid; text-align: center; min-width: 64px; }
+  .days .chip b { font-family: Anton, sans-serif; font-weight: 400; font-size: 1.5rem; }
+  .summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; border-top: 1px solid var(--line); padding-top: 24px; flex-wrap: wrap; }
+  .summary small { color: var(--muted); display: block; }
+  .summary strong { font-size: 1.05rem; }
+
+  /* depoimento */
+  .quote { text-align: center; max-width: 880px; margin: auto; }
+  .quote p { font-family: "Playfair Display", serif; font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.6rem); line-height: 1.3; }
+  .quote cite { display: block; margin-top: 26px; color: var(--gold); font-style: normal; letter-spacing: .2em; text-transform: uppercase; font-size: .8rem; }
+
+  /* rodapé */
+  footer { border-top: 1px solid var(--line); padding: 70px 0 40px; }
+  .foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
+  .foot h4 { font-size: .78rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; font-weight: 600; }
+  .foot p, .foot li { color: var(--muted); font-size: .95rem; list-style: none; }
+  .foot li { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--line); }
+  .big-logo { font-family: Anton, sans-serif; font-size: clamp(4rem, 16vw, 13rem); line-height: .8; color: transparent; -webkit-text-stroke: 1px #3a342a; text-align: center; margin-top: 70px; letter-spacing: .08em; }
+  .note-c { position: fixed; left: 16px; bottom: 16px; z-index: 50; background: rgba(0,0,0,.8); border: 1px solid var(--line); padding: 8px 12px; font-size: .75rem; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .links { display: none; }
+    .hero-grid, .menu-wrap, .book-grid, .foot { grid-template-columns: 1fr; }
+    .pole { right: 20px; width: 34px; opacity: .5; }
+    .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; }
+    .team { grid-template-columns: 1fr; }
+    .board { padding: 6px 22px; }
+    section { padding: 80px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="w">
+    <a href="#" class="logo" aria-label="Barbearia Navalha">
+      <svg viewBox="0 0 40 40" fill="none" stroke="#c9a24a" stroke-width="2"><circle cx="20" cy="20" r="18"/><path d="M11 26 L27 10 L30 13 L14 29 Z" fill="#c9a24a" stroke="none"/><path d="M14 29 l-3 3"/></svg>
+      <b>NAVALHA</b>
+    </a>
+    <div class="links"><a href="#servicos">Serviços</a><a href="#barbeiros">Barbeiros</a><a href="#agendar">Agendar</a></div>
+    <a href="#agendar" class="btn btn-line">Agendar</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="pole" aria-hidden="true"></div>
+  <div class="w hero-grid">
+    <div>
+      <span class="kicker">Barbearia clássica · Bauru</span>
+      <h1 class="display">Corte<span class="serif">com tempo pra</span>respirar.</h1>
+      <p>Sem fila e sem pressa. Você escolhe o barbeiro e o horário, chega e senta na cadeira. A gente cuida do resto.</p>
+      <div class="row">
+        <a href="#agendar" class="btn btn-gold">Agendar horário →</a>
+        <a href="#servicos" class="btn btn-line">Ver serviços</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <div class="num">R$ 45</div>
+      <div class="small">corte clássico com lavagem e toalha quente</div>
+      <hr>
+      <div class="open"><span class="dot"></span> Aberto hoje · 9h às 20h</div>
+    </aside>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div>
+  <span>Corte</span>✦<span>Barba na navalha</span>✦<span>Toalha quente</span>✦<span>Pigmentação</span>✦<span>Sobrancelha</span>✦<span>Cerveja gelada</span>✦
+  <span>Corte</span>✦<span>Barba na navalha</span>✦<span>Toalha quente</span>✦<span>Pigmentação</span>✦<span>Sobrancelha</span>✦<span>Cerveja gelada</span>✦
+</div></div>
+
+<section id="servicos">
+  <div class="w menu-wrap">
+    <div>
+      <span class="eyebrow">O cardápio</span>
+      <h2 class="display">Serviços<br>&amp; preços</h2>
+      <p class="note">Preço na parede, sem surpresa no caixa. Todos os serviços incluem lavagem e finalização.</p>
+    </div>
+    <div class="board">
+      <div class="item"><h3>Corte <span class="time">40 min</span></h3><p>Tesoura ou máquina, do clássico ao degradê.</p><span class="price">R$ 45</span></div>
+      <div class="item"><h3>Barba <span class="time">30 min</span></h3><p>Toalha quente, navalha e óleo de finalização.</p><span class="price">R$ 35</span></div>
+      <div class="item"><h3>Corte + barba <span class="time">70 min</span></h3><p>O combo da casa. O mais pedido.</p><span class="price">R$ 70</span></div>
+      <div class="item"><h3>Pigmentação <span class="time">30 min</span></h3><p>Para barba ou cabelo, com acabamento natural.</p><span class="price">R$ 40</span></div>
+      <div class="item"><h3>Sobrancelha <span class="time">10 min</span></h3><p>Na navalha, só limpando.</p><span class="price">R$ 15</span></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="w">
+    <span class="eyebrow">O espaço</span>
+    <h2 class="display">Cadeira de couro,<br>conversa boa.</h2>
+    <div class="gallery">
+      <div class="tile big t1"><svg viewBox="0 0 100 100" fill="none" stroke="#c9a24a" stroke-width="1.5"><path d="M30 80 V45 a20 20 0 0 1 40 0 V80"/><path d="M22 80 h56"/><circle cx="50" cy="28" r="10"/></svg><span>A cadeira</span></div>
+      <div class="tile t2"><span>Toalha quente</span></div>
+      <div class="tile t3"><span>Navalhas</span></div>
+      <div class="tile wide t4"><svg viewBox="0 0 100 60" fill="none" stroke="#c9a24a" stroke-width="1.5"><rect x="10" y="10" width="80" height="40" rx="4"/><path d="M10 22 h80"/></svg><span>O balcão</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="barbeiros" style="padding-top:0">
+  <div class="w">
+    <span class="eyebrow">A equipe</span>
+    <h2 class="display">Escolha<br>seu barbeiro</h2>
+    <div class="team">
+      <article class="barber"><div class="portrait"><b>01</b><svg viewBox="0 0 100 100" fill="none" stroke="#c9a24a" stroke-width="1.6"><circle cx="50" cy="38" r="18"/><path d="M32 34 q18 -22 36 0"/><path d="M40 52 q10 10 20 0"/><path d="M20 95 q30 -40 60 0"/></svg></div><div class="info"><h3>Rafael</h3><p>12 anos de navalha. Especialista em degradê.</p><div class="tags"><span>Degradê</span><span>Barba</span></div></div></article>
+      <article class="barber"><div class="portrait"><b>02</b><svg viewBox="0 0 100 100" fill="none" stroke="#c9a24a" stroke-width="1.6"><circle cx="50" cy="38" r="18"/><path d="M30 30 q20 -18 40 0 v-6"/><path d="M20 95 q30 -40 60 0"/></svg></div><div class="info"><h3>Diego</h3><p>Cortes modernos, freestyle e desenhos.</p><div class="tags"><span>Freestyle</span><span>Pigmentação</span></div></div></article>
+      <article class="barber"><div class="portrait"><b>03</b><svg viewBox="0 0 100 100" fill="none" stroke="#c9a24a" stroke-width="1.6"><circle cx="50" cy="40" r="18"/><path d="M32 40 q18 30 36 0"/><path d="M20 95 q30 -40 60 0"/></svg></div><div class="info"><h3>Marcos</h3><p>Tesoura e cabelos longos. Barba cheia.</p><div class="tags"><span>Tesoura</span><span>Barba longa</span></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="agendar" class="book">
+  <div class="w book-grid">
+    <div>
+      <span class="eyebrow">Agendamento</span>
+      <h2 class="display">Marque em<br>30 segundos</h2>
+      <p style="color:var(--muted);margin-top:22px;max-width:400px">Escolha o serviço, o dia e o horário. A confirmação chega direto no seu WhatsApp.</p>
+    </div>
+    <div class="widget" id="widget">
+      <p class="step">1 · Serviço</p>
+      <div class="chips" data-group="servico"><button class="chip on">Corte</button><button class="chip">Barba</button><button class="chip">Corte + barba</button></div>
+      <p class="step">2 · Dia</p>
+      <div class="chips days" data-group="dia"><button class="chip">Seg<b>03</b></button><button class="chip on">Ter<b>04</b></button><button class="chip">Qua<b>05</b></button><button class="chip">Qui<b>06</b></button><button class="chip">Sex<b>07</b></button></div>
+      <p class="step">3 · Horário</p>
+      <div class="chips" data-group="hora"><button class="chip off">09:00</button><button class="chip">10:00</button><button class="chip off">11:00</button><button class="chip on">14:00</button><button class="chip">15:30</button><button class="chip">17:00</button></div>
+      <div class="summary"><div><small>Seu horário</small><strong id="resumo">Corte · Ter 04 · 14:00</strong></div><button class="btn btn-gold" type="button">Confirmar no WhatsApp</button></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="w quote">
+    <p>“Entrei, sentei, saí outro. Melhor degradê da cidade e ainda saí com hora marcada pro mês que vem.”</p>
+    <cite>— Cliente da casa</cite>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <div class="foot">
+      <div><h4>Navalha</h4><p>Barbearia clássica para quem gosta de sair bem e sem pressa.</p></div>
+      <div><h4>Horários</h4><ul><li>Seg a sex <span>9h–20h</span></li><li>Sábado <span>9h–18h</span></li><li>Domingo <span>Fechado</span></li></ul></div>
+      <div><h4>Onde estamos</h4><p>Rua das Palmeiras, 120<br>Centro · Bauru/SP</p></div>
+    </div>
+    <div class="big-logo" aria-hidden="true">NAVALHA</div>
+  </div>
+</footer>
+
+<div class="note-c">Projeto conceito · negócio fictício · design por Igor Almeida</div>
+
+<script>
+  document.querySelectorAll('#widget [data-group]').forEach(function (g) {
+    g.addEventListener('click', function (e) {
+      var c = e.target.closest('.chip'); if (!c || c.classList.contains('off')) return;
+      g.querySelectorAll('.chip').forEach(function (x) { x.classList.remove('on'); }); c.classList.add('on');
+      var v = function (n) { var el = document.querySelector('[data-group="' + n + '"] .on'); return el ? el.innerText.replace(/\s+/g, ' ').trim() : ''; };
+      document.getElementById('resumo').textContent = v('servico') + ' · ' + v('dia') + ' · ' + v('hora');
+    });
+  });
+</script>
+</body>
+</html>

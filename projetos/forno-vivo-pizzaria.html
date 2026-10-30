@@ -1,51 +1,222 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Forno Vivo Pizzaria | Projeto conceito por Igor Almeida</title><meta name="robots" content="noindex">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forno Vivo Pizzaria | Projeto conceito por Igor Almeida</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#fff4e6;--red:#d63a24;--red2:#a82a18;--ink:#2a120d;--muted:#7a5c52;--line:#f0dcc6}
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Inter,sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;padding-bottom:90px}
-a{color:inherit;text-decoration:none}.w{width:min(1180px,100% - 32px);margin:auto}
-h1,h2,.logo{font-family:Fraunces,serif}
-nav{display:flex;align-items:center;justify-content:space-between;height:84px}
-.logo{font-size:28px;font-weight:900;color:var(--red)}.logo small{font-family:Inter;font-size:12px;color:var(--muted);font-weight:500;display:block;letter-spacing:.2em;margin-top:-6px}
-.links{display:flex;gap:30px;font-weight:500;color:var(--muted)}
-.open{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:#15803d;background:#dcfce7;padding:8px 14px;border-radius:999px}
-.open i{width:8px;height:8px;border-radius:50%;background:#16a34a}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;font-weight:700;padding:15px 26px;border-radius:14px}
-.hero .w{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:40px 0 70px}
-h1{font-size:76px;line-height:.98;font-weight:900}h1 span{color:var(--red)}
-.hero p{font-size:19px;color:var(--muted);margin:22px 0 30px;max-width:460px}
-.chips{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap}.chips span{background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500}
-.pz{--s:460px;width:var(--s);height:var(--s);border-radius:50%;position:relative;margin:auto;
-background:
-radial-gradient(circle at 30% 32%,#a3241a 0 5.5%,transparent 6%),radial-gradient(circle at 62% 26%,#a3241a 0 5.5%,transparent 6%),radial-gradient(circle at 70% 58%,#a3241a 0 5.5%,transparent 6%),radial-gradient(circle at 40% 66%,#a3241a 0 5.5%,transparent 6%),radial-gradient(circle at 52% 46%,#a3241a 0 5.5%,transparent 6%),
-radial-gradient(circle at 45% 30%,#3f7d2c 0 3%,transparent 3.4%),radial-gradient(circle at 60% 72%,#3f7d2c 0 3%,transparent 3.4%),
-radial-gradient(circle,#f6d27a 0 30%,#f2c159 52%,#e4512f 60%,#c9381f 64%,#e7a65a 66%,#c88443 76%,#a8652f 80%,transparent 81%);
-box-shadow:0 40px 80px -30px rgba(120,40,20,.5)}
-.pz.s{--s:150px;box-shadow:none}
-section{padding:70px 0}h2{font-size:48px;font-weight:900;margin-bottom:10px}
-.tabs{display:flex;gap:10px;margin:22px 0 34px}.tabs span{padding:10px 18px;border-radius:999px;border:1px solid var(--line);font-weight:600;font-size:14px;background:#fff}.tabs .on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.menu article{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px;display:flex;flex-direction:column;align-items:center;text-align:center}
-.menu h3{font-size:20px;margin-top:14px}.menu p{color:var(--muted);font-size:14px;min-height:44px}
-.menu .ft{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:14px}
-.menu b{font-size:20px}.add{width:42px;height:42px;border-radius:12px;background:var(--red);color:#fff;display:grid;place-items:center;font-size:22px;font-weight:700}
-.tag{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--red);background:#fde3dc;padding:3px 9px;border-radius:999px}
-.cart{position:fixed;left:50%;transform:translateX(-50%);bottom:18px;width:min(760px,100% - 32px);background:var(--ink);color:#fff;border-radius:18px;padding:14px 16px 14px 22px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 20px 40px -10px rgba(42,18,13,.5)}
-.cart span{color:#e8cfc4}.cart .btn{padding:12px 20px;background:#25d366}
-.note{position:fixed;left:16px;top:16px;background:#fffd;border:1px solid var(--line);padding:8px 12px;border-radius:8px;font-size:12px;color:var(--muted)}
-@media(max-width:860px){.hero .w,.menu{grid-template-columns:1fr}.pz{--s:300px}h1{font-size:50px}.links{display:none}}
-</style></head><body>
-<header class="w"><nav><a class="logo">Forno Vivo<small>PIZZARIA</small></a><div class="links"><a>Cardápio</a><a>Promoções</a><a>Delivery</a></div><span class="open"><i></i> Aberto agora · 18h às 23h30</span></nav></header>
-<div class="hero"><div class="w"><div><h1>A pizza que chega <span>quentinha.</span></h1><p>Massa de fermentação natural, forno a lenha e entrega rápida. Monte seu pedido em 2 minutos.</p><a class="btn">Ver cardápio →</a><div class="chips"><span>🔥 Forno a lenha</span><span>🛵 Entrega em ~35 min</span><span>💳 Pix e cartão</span></div></div><div class="pz"></div></div></div>
-<section class="w"><h2>Cardápio</h2><div class="tabs"><span class="on">Tradicionais</span><span>Especiais</span><span>Doces</span><span>Bebidas</span></div><div class="menu">
-<article><div class="pz s"></div><h3>Calabresa</h3><p>Calabresa artesanal, cebola roxa e azeitonas.</p><div class="ft"><b>R$ 49</b><span class="add">+</span></div></article>
-<article><div class="pz s" style="filter:hue-rotate(-12deg) saturate(.7)"></div><h3>Margherita <span class="tag">Mais pedida</span></h3><p>Tomate italiano, muçarela de búfala e manjericão.</p><div class="ft"><b>R$ 52</b><span class="add">+</span></div></article>
-<article><div class="pz s" style="filter:saturate(.5) brightness(1.08)"></div><h3>Quatro queijos</h3><p>Muçarela, gorgonzola, parmesão e provolone.</p><div class="ft"><b>R$ 56</b><span class="add">+</span></div></article>
-<article><div class="pz s" style="filter:hue-rotate(20deg)"></div><h3>Portuguesa</h3><p>Presunto, ovo, cebola, ervilha e azeitonas.</p><div class="ft"><b>R$ 54</b><span class="add">+</span></div></article>
-<article><div class="pz s" style="filter:hue-rotate(-30deg) saturate(1.2)"></div><h3>Pepperoni</h3><p>Pepperoni fatiado fino e orégano fresco.</p><div class="ft"><b>R$ 58</b><span class="add">+</span></div></article>
-<article><div class="pz s" style="filter:sepia(.5) saturate(1.4)"></div><h3>Frango com catupiry</h3><p>Frango desfiado temperado e catupiry original.</p><div class="ft"><b>R$ 53</b><span class="add">+</span></div></article></div></section>
-<div class="cart"><div><b>Seu pedido · 2 pizzas</b><br><span>Calabresa + Margherita</span></div><div style="display:flex;gap:18px;align-items:center"><b style="font-size:20px">R$ 101,00</b><a class="btn">Finalizar no WhatsApp</a></div></div>
-<div class="note">Projeto conceito · negócio fictício · design por Igor Almeida</div>
-</body></html>
+  :root {
+    --cream: #fff5e6;
+    --red: #e23d28;
+    --red-2: #b42b19;
+    --yellow: #ffc53d;
+    --green: #2f7d3b;
+    --ink: #2a120d;
+    --muted: #7a5c52;
+    --line: #2a120d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; overflow-x: clip; }
+  body { font-family: "Bricolage Grotesque", sans-serif; background: var(--cream); color: var(--ink); line-height: 1.5; overflow-x: clip; padding-bottom: 100px; }
+  a { color: inherit; text-decoration: none; }
+  .w { width: min(1200px, 100% - 40px); margin: auto; }
+  .hand { font-family: Caveat, cursive; font-weight: 700; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border: 3px solid var(--ink); border-radius: 16px; font-weight: 800; font-size: 1.05rem; box-shadow: 5px 5px 0 var(--ink); transition: transform .12s, box-shadow .12s; cursor: pointer; font-family: inherit; }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+  .btn:active { transform: translate(3px, 3px); box-shadow: 2px 2px 0 var(--ink); }
+  .btn-red { background: var(--red); color: #fff; }
+  .btn-yellow { background: var(--yellow); color: var(--ink); }
+
+  /* topo */
+  nav { display: flex; align-items: center; justify-content: space-between; height: 92px; }
+  .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.6rem; letter-spacing: -.03em; }
+  .logo .flame { width: 42px; height: 42px; background: var(--red); border: 3px solid var(--ink); border-radius: 50% 50% 50% 0; transform: rotate(-45deg); display: grid; place-items: center; }
+  .logo .flame span { transform: rotate(45deg); font-size: 1.2rem; }
+  .status { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 3px solid var(--ink); border-radius: 999px; padding: 8px 16px; font-weight: 800; font-size: .9rem; }
+  .status i { width: 10px; height: 10px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 3px rgba(34,197,94,.3); }
+
+  /* hero */
+  .hero { position: relative; padding: 30px 0 80px; }
+  .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 30px; align-items: center; }
+  .hero h1 { font-size: clamp(3.4rem, 8.5vw, 7.6rem); line-height: .9; letter-spacing: -.05em; font-weight: 800; }
+  .hero h1 .r { color: var(--red); }
+  .hero h1 .hand { font-size: .5em; color: var(--green); display: inline-block; transform: rotate(-6deg); letter-spacing: 0; margin-left: 8px; }
+  .hero p { font-size: 1.25rem; color: var(--muted); max-width: 480px; margin: 26px 0 34px; }
+  .hero .row { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .stage { position: relative; aspect-ratio: 1; }
+  .pizza { position: absolute; inset: 8%; border-radius: 50%; border: 4px solid var(--ink); animation: spin 40s linear infinite;
+    background:
+      radial-gradient(circle at 30% 32%, #a3241a 0 6%, transparent 6.4%), radial-gradient(circle at 64% 26%, #a3241a 0 6%, transparent 6.4%),
+      radial-gradient(circle at 72% 58%, #a3241a 0 6%, transparent 6.4%), radial-gradient(circle at 38% 68%, #a3241a 0 6%, transparent 6.4%),
+      radial-gradient(circle at 52% 46%, #a3241a 0 6%, transparent 6.4%), radial-gradient(circle at 22% 52%, #3f7d2c 0 3%, transparent 3.4%),
+      radial-gradient(circle at 60% 76%, #3f7d2c 0 3%, transparent 3.4%), radial-gradient(circle at 80% 40%, #3f7d2c 0 3%, transparent 3.4%),
+      radial-gradient(circle, #f9d77e 0 52%, #f2bb4f 60%, #e26a33 66%, #d38a45 70%, #b8743a 84%, #9d5f2c 100%); }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .sticker { position: absolute; border: 3px solid var(--ink); border-radius: 50%; display: grid; place-items: center; text-align: center; font-weight: 800; box-shadow: 4px 4px 0 var(--ink); }
+  .s1 { width: 132px; height: 132px; background: var(--yellow); right: 0; top: 4%; transform: rotate(12deg); font-size: .95rem; line-height: 1.1; }
+  .s1 b { display: block; font-size: 2rem; }
+  .s2 { width: 118px; height: 118px; background: var(--green); color: #fff; left: 0; bottom: 6%; transform: rotate(-10deg); font-size: .9rem; line-height: 1.1; }
+  .s2 b { display: block; font-size: 1.6rem; }
+
+  /* faixa */
+  .ribbon { background: var(--red); color: #fff; border-block: 3px solid var(--ink); transform: rotate(-1.5deg); margin: 0 -20px; overflow: hidden; white-space: nowrap; }
+  .ribbon div { display: inline-block; padding: 16px 0; font-weight: 800; font-size: 1.5rem; animation: mq 18s linear infinite; }
+  .ribbon span { margin: 0 24px; }
+  @keyframes mq { to { transform: translateX(-50%); } }
+
+  section { padding: 110px 0; }
+  h2 { font-size: clamp(2.6rem, 6vw, 4.6rem); letter-spacing: -.04em; line-height: .95; font-weight: 800; }
+  h2 .hand { color: var(--red); font-size: .7em; letter-spacing: 0; }
+
+  /* cardápio */
+  .menu-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; flex-wrap: wrap; }
+  .tabs { display: flex; gap: 10px; flex-wrap: wrap; }
+  .tab { border: 3px solid var(--ink); background: #fff; border-radius: 999px; padding: 10px 20px; font: inherit; font-weight: 800; cursor: pointer; }
+  .tab.on { background: var(--ink); color: var(--cream); }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .card { background: #fff; border: 3px solid var(--ink); border-radius: 24px; padding: 24px; box-shadow: 6px 6px 0 var(--ink); display: flex; flex-direction: column; }
+  .card .mini { width: 140px; height: 140px; border-radius: 50%; border: 3px solid var(--ink); margin: 0 auto 18px; }
+  .card h3 { font-size: 1.5rem; letter-spacing: -.02em; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card p { color: var(--muted); font-size: .98rem; margin: 6px 0 18px; flex: 1; }
+  .card .foot { display: flex; justify-content: space-between; align-items: center; }
+  .card .price { font-size: 1.6rem; font-weight: 800; }
+  .add { width: 48px; height: 48px; border-radius: 14px; border: 3px solid var(--ink); background: var(--yellow); font-size: 1.6rem; font-weight: 800; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); }
+  .add:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+  .badge { font-size: .72rem; background: var(--red); color: #fff; padding: 3px 9px; border-radius: 999px; border: 2px solid var(--ink); }
+  .hidden { display: none; }
+  .m1 { background: radial-gradient(circle at 35% 35%, #a3241a 0 9%, transparent 9.5%), radial-gradient(circle at 65% 55%, #a3241a 0 9%, transparent 9.5%), radial-gradient(circle at 40% 70%, #a3241a 0 9%, transparent 9.5%), radial-gradient(circle, #f9d77e 0 60%, #c97e3c 72%, #9d5f2c 100%); }
+  .m2 { background: radial-gradient(circle at 35% 40%, #fff 0 11%, transparent 11.5%), radial-gradient(circle at 62% 60%, #fff 0 11%, transparent 11.5%), radial-gradient(circle at 60% 30%, #3f7d2c 0 6%, transparent 6.5%), radial-gradient(circle, #e2452e 0 60%, #c97e3c 72%, #9d5f2c 100%); }
+  .m3 { background: radial-gradient(circle at 40% 40%, #f3e7c2 0 12%, transparent 12.5%), radial-gradient(circle at 62% 62%, #c9d6e8 0 9%, transparent 9.5%), radial-gradient(circle, #fbe3a0 0 60%, #c97e3c 72%, #9d5f2c 100%); }
+  .m4 { background: radial-gradient(circle at 50% 50%, #5a2b1a 0 20%, transparent 21%), radial-gradient(circle at 30% 30%, #e23d28 0 8%, transparent 8.5%), radial-gradient(circle, #6b3a22 0 60%, #c97e3c 72%, #9d5f2c 100%); }
+  .m5 { background: radial-gradient(circle at 50% 50%, #fff 0 6%, transparent 6.5%), radial-gradient(circle at 30% 60%, #f4f0e6 0 10%, transparent 10.5%), radial-gradient(circle, #f6d38f 0 60%, #c97e3c 72%, #9d5f2c 100%); }
+  .m6 { background: radial-gradient(circle at 40% 40%, #3f7d2c 0 7%, transparent 7.5%), radial-gradient(circle at 64% 60%, #f3c13a 0 9%, transparent 9.5%), radial-gradient(circle, #f2b84d 0 60%, #c97e3c 72%, #9d5f2c 100%); }
+
+  /* como funciona */
+  .how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 44px; }
+  .how div { border: 3px solid var(--ink); border-radius: 24px; padding: 30px; background: var(--yellow); }
+  .how div:nth-child(2) { background: #fff; transform: rotate(1deg); }
+  .how div:nth-child(3) { background: var(--green); color: #fff; transform: rotate(-1deg); }
+  .how b { font-size: 3rem; line-height: 1; display: block; margin-bottom: 10px; }
+  .how h3 { font-size: 1.5rem; margin-bottom: 6px; }
+
+  footer { border-top: 3px solid var(--ink); padding: 50px 0; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; font-weight: 500; }
+  .foot-grid .big { font-size: 2rem; font-weight: 800; letter-spacing: -.03em; }
+
+  /* carrinho */
+  .cart { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%) translateY(140%); width: min(720px, 100% - 32px); background: var(--ink); color: var(--cream); border-radius: 20px; padding: 14px 14px 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 14px; z-index: 40; transition: transform .35s cubic-bezier(.2,.9,.3,1.2); box-shadow: 0 20px 40px -10px rgba(42,18,13,.5); }
+  .cart.show { transform: translateX(-50%) translateY(0); }
+  .cart small { color: #e8cfc4; }
+  .cart .btn { box-shadow: none; border-color: var(--cream); background: #25d366; color: #fff; padding: 12px 20px; }
+  .note-c { position: fixed; left: 16px; top: 16px; z-index: 50; background: #fff; border: 2px solid var(--ink); border-radius: 10px; padding: 6px 10px; font-size: .75rem; color: var(--muted); }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .stage { max-width: 420px; margin: auto; width: 100%; }
+    .grid, .how { grid-template-columns: 1fr; }
+    .status { display: none; }
+    section { padding: 80px 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="w">
+    <a href="#" class="logo"><span class="flame"><span>🔥</span></span>Forno Vivo</a>
+    <span class="status"><i></i> Aberto · até 23h30</span>
+    <a href="#cardapio" class="btn btn-yellow">Pedir agora</a>
+  </nav>
+</header>
+
+<section class="hero" style="padding-top:30px">
+  <div class="w hero-grid">
+    <div>
+      <h1>A pizza que chega <span class="r">quentinha.</span><span class="hand">jura!</span></h1>
+      <p>Massa de fermentação natural, forno a lenha e entrega rápida. Monte o pedido aqui e finalize no WhatsApp em 2 minutos.</p>
+      <div class="row"><a href="#cardapio" class="btn btn-red">Ver cardápio →</a><a href="#como" class="btn btn-yellow">Como funciona</a></div>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="pizza"></div>
+      <div class="sticker s1"><span><b>~35</b>min na<br>sua casa</span></div>
+      <div class="sticker s2"><span><b>48h</b>de massa<br>descansando</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div>
+  <span>🔥 Forno a lenha</span><span>🍕 Massa artesanal</span><span>🛵 Entrega rápida</span><span>💳 Pix e cartão</span>
+  <span>🔥 Forno a lenha</span><span>🍕 Massa artesanal</span><span>🛵 Entrega rápida</span><span>💳 Pix e cartão</span>
+</div></div>
+
+<section id="cardapio">
+  <div class="w">
+    <div class="menu-head">
+      <h2>Escolhe aí <span class="hand">a sua</span></h2>
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-cat="trad">Tradicionais</button>
+        <button class="tab" data-cat="esp">Especiais</button>
+        <button class="tab" data-cat="doce">Doces</button>
+      </div>
+    </div>
+    <div class="grid">
+      <article class="card" data-cat="trad"><div class="mini m1"></div><h3>Calabresa</h3><p>Calabresa artesanal, cebola roxa e azeitonas.</p><div class="foot"><span class="price">R$ 49</span><button class="add" data-name="Calabresa" data-price="49" aria-label="Adicionar Calabresa">+</button></div></article>
+      <article class="card" data-cat="trad"><div class="mini m2"></div><h3>Margherita <span class="badge">a mais pedida</span></h3><p>Tomate italiano, muçarela de búfala e manjericão.</p><div class="foot"><span class="price">R$ 52</span><button class="add" data-name="Margherita" data-price="52" aria-label="Adicionar Margherita">+</button></div></article>
+      <article class="card" data-cat="trad"><div class="mini m3"></div><h3>Quatro queijos</h3><p>Muçarela, gorgonzola, parmesão e provolone.</p><div class="foot"><span class="price">R$ 56</span><button class="add" data-name="Quatro queijos" data-price="56" aria-label="Adicionar Quatro queijos">+</button></div></article>
+      <article class="card hidden" data-cat="esp"><div class="mini m6"></div><h3>Rúcula com tomate seco</h3><p>Muçarela, rúcula fresca e tomate seco.</p><div class="foot"><span class="price">R$ 62</span><button class="add" data-name="Rúcula com tomate seco" data-price="62" aria-label="Adicionar Rúcula">+</button></div></article>
+      <article class="card hidden" data-cat="esp"><div class="mini m1"></div><h3>Pepperoni <span class="badge">picante</span></h3><p>Pepperoni fatiado fino e mel de pimenta.</p><div class="foot"><span class="price">R$ 64</span><button class="add" data-name="Pepperoni" data-price="64" aria-label="Adicionar Pepperoni">+</button></div></article>
+      <article class="card hidden" data-cat="doce"><div class="mini m4"></div><h3>Chocolate com morango</h3><p>Chocolate ao leite e morangos frescos.</p><div class="foot"><span class="price">R$ 54</span><button class="add" data-name="Chocolate com morango" data-price="54" aria-label="Adicionar Chocolate">+</button></div></article>
+      <article class="card hidden" data-cat="doce"><div class="mini m5"></div><h3>Banana com canela</h3><p>Banana, canela e leite condensado.</p><div class="foot"><span class="price">R$ 48</span><button class="add" data-name="Banana com canela" data-price="48" aria-label="Adicionar Banana">+</button></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="como" style="padding-top:0">
+  <div class="w">
+    <h2>Pedir é <span class="hand">fácil assim</span></h2>
+    <div class="how">
+      <div><b>1</b><h3>Escolha</h3><p>Toque no + das pizzas que quiser.</p></div>
+      <div><b>2</b><h3>Revise</h3><p>O carrinho soma tudo para você.</p></div>
+      <div><b>3</b><h3>Finalize</h3><p>Seu pedido vai pronto para o WhatsApp.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="w foot-grid">
+    <div><div class="big">Forno Vivo</div>Pizzaria artesanal · Bauru/SP</div>
+    <div>Ter a dom · 18h às 23h30<br>Rua do Forno, 300 · Vila Nova</div>
+  </div>
+  <p class="w" style="margin-top:28px;font-size:.85rem;color:var(--muted)">Projeto conceito · negócio fictício · design por Igor Almeida</p>
+</footer>
+
+<div class="cart" id="cart"><div><b id="cart-title">Seu pedido</b><br><small id="cart-items"></small></div><div style="display:flex;gap:16px;align-items:center"><b id="cart-total" style="font-size:1.3rem"></b><button class="btn" type="button">Finalizar no WhatsApp</button></div></div>
+
+<script>
+  document.querySelectorAll('.tab').forEach(function (t) {
+    t.addEventListener('click', function () {
+      document.querySelectorAll('.tab').forEach(function (x) { x.classList.remove('on'); }); t.classList.add('on');
+      document.querySelectorAll('.card').forEach(function (c) { c.classList.toggle('hidden', c.dataset.cat !== t.dataset.cat); });
+    });
+  });
+  var pedido = {};
+  var brl = function (n) { return 'R$ ' + n.toFixed(2).replace('.', ','); };
+  document.querySelectorAll('.add').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var n = b.dataset.name; pedido[n] = pedido[n] || { qtd: 0, preco: +b.dataset.price }; pedido[n].qtd++;
+      var itens = Object.keys(pedido), qtd = 0, total = 0;
+      itens.forEach(function (k) { qtd += pedido[k].qtd; total += pedido[k].qtd * pedido[k].preco; });
+      document.getElementById('cart-title').textContent = 'Seu pedido · ' + qtd + (qtd > 1 ? ' pizzas' : ' pizza');
+      document.getElementById('cart-items').textContent = itens.map(function (k) { return pedido[k].qtd + 'x ' + k; }).join(', ');
+      document.getElementById('cart-total').textContent = brl(total);
+      document.getElementById('cart').classList.add('show');
+    });
+  });
+</script>
+</body>
+</html>
