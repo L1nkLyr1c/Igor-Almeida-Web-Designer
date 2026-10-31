@@ -240,7 +240,7 @@ export default function App() {
             </div>
           </div>
         </section>
-        <div className="stripe h-2 opacity-90" aria-hidden="true" />
+        <div className="stripe" aria-hidden="true" />
 
         {/* serviços */}
         <section id="servicos" className="mx-auto max-w-7xl scroll-mt-20 px-5 py-24 md:px-8 md:py-32">

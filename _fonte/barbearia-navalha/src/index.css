@@ -71,6 +71,17 @@
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
   .reveal.in { opacity: 1; transform: none; }
   .leader { flex: 1; border-bottom: 1px dashed hsl(var(--border)); margin: 0 1rem .55rem; min-width: 1rem; }
-  .stripe { background: repeating-linear-gradient(-45deg, #8b3a33 0 10px, #ebe5d8 10px 20px, #1f3f6b 20px 30px, #ebe5d8 30px 40px); }
+  /* poste de barbearia: listras andando para o lado = efeito de cilindro girando */
+  .stripe {
+    height: 16px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(255,255,255,.2) 35%, rgba(255,255,255,0) 55%, rgba(0,0,0,.55) 100%),
+      repeating-linear-gradient(-45deg, #8b3a33 0 14px, #ebe5d8 14px 28px, #1f3f6b 28px 42px, #ebe5d8 42px 56px);
+    background-size: 100% 100%, 79.196px 79.196px;
+    animation: poste 1.4s linear infinite;
+  }
+  @keyframes poste { to { background-position: 0 0, 79.196px 0; } }
+  @media (min-width: 768px) { .stripe { height: 22px; } }
+  @media (prefers-reduced-motion: reduce) { .stripe { animation: none; } }
   @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
 }
