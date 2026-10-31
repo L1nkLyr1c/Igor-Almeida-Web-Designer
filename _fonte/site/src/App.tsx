@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
-import { TELAS, heroScroll, podeUsar3D, waLink } from "./lib";
+import { TELAS, TELAS_CEL, heroScroll, podeUsar3D, waLink } from "./lib";
 import Contato from "./Contato";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -80,15 +80,25 @@ function Header() {
 /* ---------- capa ---------- */
 
 function TelasCSS() {
-  // versão leve: as mesmas telas num plano inclinado, em CSS puro
-  const cols = [TELAS.slice(0, 5), TELAS.slice(5, 10), TELAS.slice(9, 14)];
+  // versão leve, em CSS puro: no computador, telas de computador; no celular, colunas de telas de celular
+  const desk = [TELAS.slice(0, 5), TELAS.slice(5, 10), TELAS.slice(9, 14)];
+  const cel = [TELAS_CEL.slice(0, 4), TELAS_CEL.slice(4, 8), TELAS_CEL.slice(8, 12)];
   return (
     <div className="telas-css" aria-hidden="true">
-      <div className="telas-css-plano">
-        {cols.map((c, i) => (
+      <div className="telas-css-plano desk">
+        {desk.map((c, i) => (
           <div key={i} className={`telas-css-col col-${i}`}>
             {[...c, ...c].map((src, j) => (
-              <img key={j} src={src} alt="" width={640} height={400} loading={j < 3 ? "eager" : "lazy"} decoding="async" />
+              <img key={j} src={src} alt="" width={640} height={400} loading="lazy" decoding="async" />
+            ))}
+          </div>
+        ))}
+      </div>
+      <div className="telas-css-plano cel">
+        {cel.map((c, i) => (
+          <div key={i} className={`telas-css-col col-${i}`}>
+            {[...c, ...c].map((src, j) => (
+              <img key={j} src={src} alt="" width={300} height={600} loading="lazy" decoding="async" />
             ))}
           </div>
         ))}
@@ -130,12 +140,15 @@ function Hero() {
       });
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.from(".hero-texto > *", { y: 28, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.08, delay: 0.1 });
+      });
+      // a capa presa na rolagem só existe no computador; no celular ela ocupa uma tela e segue o fluxo normal
+      mm.add("(min-width: 768px) and (prefers-reduced-motion: no-preference)", () => {
         gsap
           .timeline({ scrollTrigger: { trigger: ref.current, start: "top top", end: "bottom bottom", scrub: 0.6 } })
           .to(".hero-texto", { yPercent: -18, opacity: 0, ease: "power1.in", duration: 0.35 }, 0)
           .fromTo(".hero-legenda", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.25 }, 0.5)
           .to(".hero-legenda", { opacity: 0, duration: 0.15 }, 0.85);
-        gsap.from(".hero-texto > *", { y: 28, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.08, delay: 0.1 });
       });
     },
     { scope: ref },
@@ -302,6 +315,7 @@ function Projetos() {
             <h2>Trabalhos recentes</h2>
             <p>Projetos conceito, com negócios fictícios, que mostram como eu penso cada tipo de site: do layout ao botão de contato. Abra e teste no seu celular.</p>
           </div>
+          <div className="projetos-cards">
           {PROJETOS.map((p) => (
             <a key={p.nome} className="projeto" href={p.href} target="_blank" rel="noopener">
               <div className="projeto-tela">
@@ -318,6 +332,7 @@ function Projetos() {
               </div>
             </a>
           ))}
+          </div>
         </div>
       </div>
     </section>
@@ -378,6 +393,7 @@ function Sobre() {
       <div className="wrap sobre-grade">
         <figure className="sobre-foto">
           <img src="/assets/site/igor.webp" alt="Igor Almeida, web designer" width={800} height={1000} loading="lazy" decoding="async" />
+          <img className="sobre-ig" src="/assets/logo/icone.svg" alt="" width={72} height={72} loading="lazy" />
         </figure>
         <div className="sobre-texto">
           <h2>Prazer, eu sou o Igor</h2>

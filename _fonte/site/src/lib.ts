@@ -34,8 +34,8 @@ export function podeUsar3D() {
   if (nav.connection?.effectiveType && /(^|-)2g/.test(nav.connection.effectiveType)) return false;
   if ((nav.deviceMemory ?? 8) <= 2) return false;
   if ((nav.hardwareConcurrency ?? 8) <= 2) return false;
-  // celular: só aparelhos intermediários para cima (4 GB de memória e 6 núcleos)
-  if (matchMedia("(pointer: coarse)").matches && ((nav.deviceMemory ?? 4) < 4 || (nav.hardwareConcurrency ?? 4) < 6)) return false;
+  // celular e tablet ficam com as telas em CSS, feitas para a tela pequena (mais bonito, leve e sem gastar bateria)
+  if (window.innerWidth < 768 || matchMedia("(pointer: coarse)").matches) return false;
   try {
     const c = document.createElement("canvas");
     if (!(c.getContext("webgl2") || c.getContext("webgl"))) return false;
@@ -49,6 +49,12 @@ export const TELAS = [
   "navalha-d0", "vidaleve-d0", "forno-d0", "navalha-d1", "vidaleve-d1", "forno-d2",
   "navalha-d3", "vidaleve-d2", "forno-d1", "navalha-d2", "vidaleve-d3", "forno-d3",
   "navalha-d4", "forno-d4",
+].map((n) => `/assets/site/telas/${n}.webp`);
+
+/** Telas de celular dos projetos, para a capa no celular. */
+export const TELAS_CEL = [
+  "navalha-c0", "vidaleve-c0", "forno-c0", "navalha-c1", "vidaleve-c1", "forno-c2",
+  "navalha-c2", "vidaleve-c2", "forno-c1", "navalha-c3", "vidaleve-c3", "forno-c3",
 ].map((n) => `/assets/site/telas/${n}.webp`);
 
 export const TELAS_CELULAR = ["navalha-m0", "vidaleve-m0", "forno-m0"].map((n) => `/assets/site/telas/${n}.webp`);
