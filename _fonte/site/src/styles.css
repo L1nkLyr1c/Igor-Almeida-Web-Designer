@@ -84,7 +84,7 @@ p { margin: 0; }
 @media (max-width: 900px) { .topo nav { display: none; } .topo-in img { width: 124px; } }
 
 /* ---------- capa ---------- */
-.hero { position: relative; height: 180vh; }
+.hero { position: relative; height: 110vh; }
 .hero-fixa { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .hero-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
 .hero-canvas canvas { display: block; width: 100%; height: 100%; }
@@ -117,13 +117,15 @@ p { margin: 0; }
   .hero { height: auto; }
   .hero-fixa { position: relative; height: 100svh; min-height: 620px; max-height: 900px; }
   .telas-css-plano.desk { display: none; }
-  .telas-css-plano.cel { display: flex; top: -10%; left: -18%; right: auto; width: 136%; height: 72%; gap: 14px; transform: rotateX(24deg) rotateZ(-11deg); }
-  .cel .telas-css-col { gap: 14px; animation-duration: 46s; }
+  /* telas maiores e menos inclinadas: parecem mais perto */
+  .telas-css { perspective: 2200px; }
+  .telas-css-plano.cel { display: flex; top: -6%; left: -36%; right: auto; width: 172%; height: 86%; gap: 10px; transform: rotateX(14deg) rotateZ(-9deg); }
+  .cel .telas-css-col { gap: 10px; animation-duration: 52s; }
   .cel .telas-css-col.col-1 { animation-duration: 58s; margin-top: -30%; }
   .cel .telas-css-col.col-2 { animation-duration: 52s; margin-top: -12%; }
   .cel .telas-css-col img { border-radius: 18px; border-color: rgba(192, 132, 252, .4); box-shadow: 0 24px 40px -18px rgba(0,0,0,.9); }
   .hero-sombra { background:
-      linear-gradient(0deg, var(--bg) 0%, var(--bg) 47%, rgba(13,10,20,.86) 58%, rgba(13,10,20,.2) 72%, rgba(13,10,20,0) 84%),
+      linear-gradient(0deg, var(--bg) 0%, var(--bg) 45%, rgba(13,10,20,.8) 55%, rgba(13,10,20,.12) 67%, rgba(13,10,20,0) 76%),
       linear-gradient(180deg, rgba(13,10,20,.9) 0%, rgba(13,10,20,0) 13%); }
   .hero-conteudo { justify-content: flex-end; padding-bottom: 7svh; }
   .hero h1 { font-size: 2.15rem; }
@@ -141,36 +143,38 @@ p { margin: 0; }
 }
 
 /* ---------- seções ---------- */
-.secao { padding-block: clamp(72px, 13vw, 168px); }
+.secao { padding-block: clamp(64px, 8vw, 112px); }
 .secao-cabeca h2, .projetos-intro h2 { font-weight: 700; font-size: clamp(2.1rem, 4.2vw, 3.6rem); line-height: 1.04; letter-spacing: -.035em; }
 .secao-cabeca p { margin-top: 18px; color: var(--suave); max-width: 520px; }
 .secao-cabeca p a { color: var(--lilas); }
 
-/* problema */
+/* problema: mais perto da capa */
+.problema { padding-top: clamp(40px, 5vw, 72px); }
 .manifesto { color: var(--texto); font-family: var(--sora); font-weight: 600; font-size: clamp(1.6rem, 3.9vw, 3.4rem); line-height: 1.14; letter-spacing: -.03em; max-width: 1080px; }
-.problemas { list-style: none; padding: 0; margin: clamp(64px, 8vw, 104px) 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--linha); }
+.problemas { list-style: none; padding: 0; margin: clamp(36px, 5vw, 64px) 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--linha); }
 .problemas li { padding: 28px 28px 8px 0; border-right: 1px solid var(--linha); }
 .problemas li + li { padding-left: 28px; }
 .problemas li:last-child { border-right: 0; }
 .problemas h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
 .problemas p { margin-top: 10px; color: var(--suave); font-size: 16px; }
-.problema-fecho { margin-top: 48px; font-size: 1.1rem; color: var(--lilas); }
+.problema-fecho { margin-top: 32px; font-size: 1.1rem; color: var(--lilas); }
 @media (max-width: 900px) {
   .problemas { grid-template-columns: 1fr 1fr; }
-  .problemas li, .problemas li + li { padding: 24px 18px 24px 0; border-right: 0; border-bottom: 1px solid var(--linha); }
+  .problemas li, .problemas li + li { padding: 18px 14px 18px 0; border-right: 0; border-bottom: 1px solid var(--linha); }
   .problemas li:nth-child(odd) { border-right: 1px solid var(--linha); }
-  .problemas li:nth-child(even) { padding-left: 18px; }
+  .problemas li:nth-child(even) { padding-left: 14px; }
 }
 @media (max-width: 520px) {
-  .problemas { grid-template-columns: 1fr; }
-  .problemas li:nth-child(odd) { border-right: 0; }
-  .problemas li:nth-child(even) { padding-left: 0; }
+  /* 2x2 também no celular, para chegar mais rápido aos serviços e projetos */
+  .problemas h3 { font-size: 1rem; }
+  .problemas p { font-size: 14px; line-height: 1.5; margin-top: 6px; }
+  .problema-fecho { font-size: 1rem; margin-top: 24px; }
 }
 
 /* serviços */
 .servicos { background: var(--bg-2); border-block: 1px solid var(--linha); }
-.servicos-lista { margin-top: clamp(48px, 6vw, 80px); }
-.servico { display: grid; grid-template-columns: 1.1fr 1.4fr 1fr auto; gap: 32px; align-items: baseline; padding: 36px 0; border-top: 1px solid var(--linha); }
+.servicos-lista { margin-top: clamp(28px, 4vw, 52px); }
+.servico { display: grid; grid-template-columns: 1.1fr 1.4fr 1fr auto; gap: 32px; align-items: baseline; padding: 26px 0; border-top: 1px solid var(--linha); }
 .servico:last-child { border-bottom: 1px solid var(--linha); }
 .servico-nome { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .servico h3 { font-size: clamp(1.6rem, 2.6vw, 2.25rem); font-weight: 700; letter-spacing: -.03em; }
@@ -179,11 +183,11 @@ p { margin: 0; }
 .servico-desc { color: var(--suave); }
 .servico-inclui { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; font-size: 15px; }
 .servico-inclui li::before { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--roxo); margin-right: 10px; vertical-align: middle; }
-@media (max-width: 1000px) { .servico { grid-template-columns: 1fr; gap: 14px; } }
+@media (max-width: 1000px) { .servico { grid-template-columns: 1fr; gap: 10px; padding: 22px 0; } }
 
 /* projetos */
 .projetos { position: relative; }
-.projetos-fixo { padding-block: clamp(96px, 12vw, 150px); }
+.projetos-fixo { padding-block: clamp(64px, 8vw, 112px); }
 .projetos-trilho { display: flex; gap: clamp(28px, 4vw, 56px); padding-inline: max(20px, calc((100vw - 1240px) / 2)); }
 .projetos-intro { flex: 0 0 min(400px, 32vw); align-self: center; }
 .projetos-intro p { margin-top: 20px; color: var(--suave); }
@@ -205,7 +209,7 @@ p { margin: 0; }
 }
 .projetos-cards { display: contents; }
 @media (max-width: 1023px), (prefers-reduced-motion: reduce) {
-  .projetos-fixo { padding-block: clamp(72px, 12vw, 150px); }
+  .projetos-fixo { padding-block: 64px; }
   .projetos-trilho { display: block; padding-inline: 0; }
   .projetos-intro { width: var(--wrap); margin-inline: auto; }
   /* carrossel de deslizar para o lado */
