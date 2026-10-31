@@ -92,7 +92,6 @@ function Logo() {
 function Status({ open, text, className = "" }: { open: boolean; text: string; className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[.16em] text-bone/75 ${className}`}>
-      <span className={`h-1.5 w-1.5 rounded-full ${open ? "bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,.18)]" : "bg-bone/40"}`} />
       {text}
     </span>
   );

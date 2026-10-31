@@ -87,10 +87,6 @@ function Logo() {
 function StatusPill({ open, text, className = "" }: { open: boolean; text: string; className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[.14em] text-cream/80 ${className}`}>
-      <span className="relative flex h-2 w-2">
-        {open && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />}
-        <span className={`relative inline-flex h-2 w-2 rounded-full ${open ? "bg-emerald-400" : "bg-cream/40"}`} />
-      </span>
       {text}
     </span>
   );
