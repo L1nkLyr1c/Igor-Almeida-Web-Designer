@@ -1,6 +1,6 @@
 # Site do Igor Almeida (igoralmeida.pages.dev)
 
-Página única em HTML/CSS/JS, sem build. Tudo está no `index.html` (a foto é embutida em base64) e em `assets/`.
+O site principal é gerado a partir de `_fonte/site/` (React + Three.js + GSAP, build com Vite e HTML pré-renderizado). Para mudar textos ou layout, edite a fonte e rode `bash _fonte/site/publicar.sh` (atualiza `index.html` e `assets/app/`). Não edite o `index.html` da raiz à mão. Passo a passo em `_fonte/site/COMO-EDITAR.md`.
 
 ## Publicação
 - O projeto Pages `igoralmeida` no Cloudflare está ligado a este repositório.
@@ -15,12 +15,13 @@ Página única em HTML/CSS/JS, sem build. Tudo está no `index.html` (a foto é 
 - Responda sempre em português do Brasil.
 
 ## Não quebrar
-- `WEB3FORMS_KEY` no `index.html`: chave do formulário. Ela é pública por design (só envia mensagens para o e-mail do Igor).
+- `WEB3FORMS_KEY` em `_fonte/site/src/lib.ts`: chave do formulário. Ela é pública por design (só envia mensagens para o e-mail do Igor).
 - Número do WhatsApp: `5514998470667`.
 - Máscara do telefone: remove +55 e 0 inicial e limita a 11 dígitos. Fixo (10 dígitos) usa (00) 0000-0000.
 - Projetos na seção "Trabalhos recentes" são conceitos (negócios fictícios). O aviso fica no subtítulo da seção e no rodapé de cada página em `projetos/`; não apresentar como clientes reais.
 - As páginas em `projetos/` são geradas a partir de `_fonte/<projeto>/` (React + Tailwind + shadcn, empacotadas num HTML só pelo skill web-artifacts-builder). Não edite o HTML de `projetos/` à mão: edite a fonte e gere de novo (passo a passo em `_fonte/<projeto>/COMO-EDITAR.md`). Fotos ficam em `assets/projetos/<pasta>/*.webp`.
 - Os prints dos cards (`assets/projetos/*.jpg`) são gerados a partir das páginas em `projetos/`. Se mudar uma página, gere o print de novo (screenshot com fullPage: true, largura 1440 e altura até 2160, reduzido para 960 de largura mantendo a proporção).
+- Desempenho: o 3D da capa (Three.js puro, sem React Three Fiber, que pesa o dobro) só carrega na primeira interação e só no computador (regras em `podeUsar3D()` e vigia de fps no `Hero3D.tsx`). No celular a capa usa as colunas de telas de celular em CSS (`assets/site/telas/*-c*.webp`). Não tire a versão em CSS.
 - Identidade visual: fundo `#0d0a14`, roxo `#9d5cff`, lilás `#c084fc`, fontes Sora (títulos) e Inter (texto).
 - Logo: `assets/logo/` (wordmark "igor.design" com o ponto como pixel roxo). As letras são vetores gerados da fonte Sora (800 em "igor", 400 em "design"); não troque por texto. Ícone "ig." em `icone.svg` e PNGs (32, 180, 192, 512 e `instagram-perfil.png`).
 
