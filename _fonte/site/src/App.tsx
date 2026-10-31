@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import Lenis from "lenis";
-import { TELAS, TELAS_CEL, heroScroll, podeUsar3D, waLink } from "./lib";
+import { TELAS, TELAS_CEL, heroScroll, motivoSem3D, vigia, waLink } from "./lib";
 import Contato from "./Contato";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -109,10 +109,14 @@ function TelasCSS() {
 
 function Hero() {
   const ref = useRef<HTMLElement>(null);
-  const [mode, setMode] = useState<"css" | "loading" | "3d">("css");
+  const [mode, setMode] = useState<"css" | "loading" | "3d" | "lento">("css");
+  const [diag, setDiag] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!podeUsar3D()) return;
+    const motivo = motivoSem3D();
+    // ?diagnostico no endereço mostra por que o 3D aparece ou não
+    if (location.search.includes("diagnostico")) setDiag(motivo ? `Sem 3D: ${motivo}.` : "3D liberado: mexa o mouse ou role para carregar.");
+    if (motivo) return;
     // O 3D só carrega quando a pessoa interage (rola, toca ou mexe o mouse).
     // Até lá fica a versão em CSS. Assim a abertura da página não trava, nem no teste do PageSpeed.
     const eventos = ["pointermove", "pointerdown", "touchstart", "wheel", "scroll", "keydown"] as const;
@@ -155,15 +159,20 @@ function Hero() {
   );
 
   return (
-    <section id="inicio" ref={ref} className={`hero hero-${mode}`}>
+    <section id="inicio" ref={ref} className={`hero hero-${mode === "lento" ? "css" : mode}`}>
       <div className="hero-fixa">
         <TelasCSS />
-        {mode !== "css" && (
+        {(mode === "loading" || mode === "3d") && (
           <Suspense fallback={null}>
-            <Hero3D onReady={() => setMode("3d")} onSlow={() => setMode("css")} />
+            <Hero3D onReady={() => setMode("3d")} onSlow={() => setMode("lento")} />
           </Suspense>
         )}
         <div className="hero-sombra" aria-hidden="true" />
+        {diag && (
+          <p className="diagnostico">
+            {mode === "3d" ? "3D ativo." : mode === "lento" ? `3D trocado pela versão leve: rodou a ${vigia.fps} fps (mínimo 28).` : mode === "loading" ? "Carregando o 3D..." : diag}
+          </p>
+        )}
         <div className="wrap hero-conteudo">
           <div className="hero-texto">
             <p className="hero-status">Agenda aberta para novos projetos</p>

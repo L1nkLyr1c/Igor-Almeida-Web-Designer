@@ -296,3 +296,6 @@ p { margin: 0; }
 .wa-flutuante { position: fixed; right: 20px; bottom: 20px; z-index: 40; width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center; background: #1fa855; color: #fff; box-shadow: 0 14px 30px -10px rgba(31, 168, 85, .7); transition: transform .2s; }
 .wa-flutuante:hover { transform: scale(1.06); }
 @media (max-width: 767px) { .wa-flutuante { display: none; } .rodape { padding-bottom: 48px; } }
+
+/* modo de diagnóstico (?diagnostico no endereço) */
+.diagnostico { position: absolute; z-index: 5; left: 50%; top: 84px; transform: translateX(-50%); max-width: min(560px, 92vw); padding: 10px 14px; border-radius: 10px; background: #fff; color: #111; font: 600 14px/1.4 var(--inter); box-shadow: 0 10px 30px rgba(0,0,0,.5); }

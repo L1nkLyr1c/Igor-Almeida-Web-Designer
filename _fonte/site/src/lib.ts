@@ -25,25 +25,31 @@ export function mascarar(valor: string) {
 /** Progresso da rolagem da capa (0 a 1), lido pela cena 3D sem re-renderizar o React. */
 export const heroScroll = { progress: 0 };
 
-/** Decide se o aparelho aguenta a cena 3D. Celulares fracos e quem pediu menos movimento ficam com a versão em CSS. */
-export function podeUsar3D() {
-  if (typeof window === "undefined") return false;
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
+/** Motivo para não usar a cena 3D (null = pode usar). Celulares, aparelhos fracos e quem pediu menos movimento ficam com a versão em CSS. */
+export function motivoSem3D(): string | null {
+  if (typeof window === "undefined") return "servidor";
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return "o sistema pede menos movimento (Windows: Configurações > Acessibilidade > Efeitos visuais > Efeitos de animação)";
   const nav = navigator as Navigator & { deviceMemory?: number; connection?: { saveData?: boolean; effectiveType?: string } };
-  if (nav.connection?.saveData) return false;
-  if (nav.connection?.effectiveType && /(^|-)2g/.test(nav.connection.effectiveType)) return false;
-  if ((nav.deviceMemory ?? 8) <= 2) return false;
-  if ((nav.hardwareConcurrency ?? 8) <= 2) return false;
+  if (nav.connection?.saveData) return "economia de dados ligada";
+  if (nav.connection?.effectiveType && /(^|-)2g/.test(nav.connection.effectiveType)) return "internet 2G";
+  if ((nav.deviceMemory ?? 8) <= 2) return `memória informada pelo navegador: ${nav.deviceMemory} GB`;
+  if ((nav.hardwareConcurrency ?? 8) <= 2) return `núcleos informados pelo navegador: ${nav.hardwareConcurrency}`;
   // celular e tablet ficam com as telas em CSS, feitas para a tela pequena (mais bonito, leve e sem gastar bateria)
-  if (window.innerWidth < 768 || matchMedia("(pointer: coarse)").matches) return false;
+  if (window.innerWidth < 768) return `tela estreita (${window.innerWidth}px): celular usa a versão em CSS`;
+  if (matchMedia("(pointer: coarse)").matches) return "tela de toque como principal (celular/tablet)";
   try {
     const c = document.createElement("canvas");
-    if (!(c.getContext("webgl2") || c.getContext("webgl"))) return false;
+    if (!(c.getContext("webgl2") || c.getContext("webgl"))) return "navegador sem WebGL (aceleração de hardware desligada?)";
   } catch {
-    return false;
+    return "erro ao testar WebGL";
   }
-  return true;
+  return null;
 }
+
+export const podeUsar3D = () => motivoSem3D() === null;
+
+/** Último fps medido pela vigia do 3D (para o modo de diagnóstico). */
+export const vigia = { fps: 0 };
 
 export const TELAS = [
   "navalha-d0", "vidaleve-d0", "forno-d0", "navalha-d1", "vidaleve-d1", "forno-d2",

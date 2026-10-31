@@ -3,7 +3,7 @@ import {
   AdditiveBlending, DoubleSide, Group, MathUtils, Mesh, PerspectiveCamera, PlaneGeometry,
   SRGBColorSpace, Scene, ShaderMaterial, Texture, TextureLoader, Vector2, WebGLRenderer,
 } from "three";
-import { TELAS, TELAS_CELULAR, heroScroll } from "./lib";
+import { TELAS, TELAS_CELULAR, heroScroll, vigia } from "./lib";
 
 /*
   "Telas infinitas": uma espiral de telas dos projetos do Igor que sobe sem fim.
@@ -171,6 +171,7 @@ export default function Hero3D({ onReady, onSlow }: { onReady: () => void; onSlo
         medido += delta;
         if (medido > 2) {
           checou = true;
+          vigia.fps = Math.round(quadros / medido);
           if (quadros / medido < 28 && !(window as Window & { __forcar3d?: boolean }).__forcar3d) return onSlow();
         }
       }
