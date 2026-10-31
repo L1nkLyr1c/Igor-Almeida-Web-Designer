@@ -246,20 +246,22 @@ function Servicos() {
   const lista = [
     {
       nome: "Landing page",
+      quem: "Para quem anuncia",
       desc: "Uma página focada em vender um produto ou serviço e levar o visitante direto para o WhatsApp.",
-      inclui: ["Ideal para anúncios", "Entrega rápida", "Foco total em conversão"],
+      inclui: ["Página única, direto ao ponto", "Entrega rápida", "Foco total em conversão"],
       msg: "Oi Igor! Quero um orçamento de landing page.",
     },
     {
       nome: "Site institucional",
-      tag: "Mais pedido",
+      quem: "Para quem atende na cidade",
       desc: "O endereço oficial do seu negócio na internet: quem você é, o que faz, onde fica e como chamar.",
       inclui: ["Até 5 seções ou páginas", "Google Maps e redes sociais", "Formulário de contato"],
       msg: "Oi Igor! Quero um orçamento de site institucional.",
     },
     {
       nome: "Redesign",
-      desc: "Já tem site, mas ele está lento, antigo ou não gera contato? Eu refaço com visual atual e mais velocidade.",
+      quem: "Para quem já tem site e não recebe contato",
+      desc: "Eu refaço o seu site atual com visual moderno, mais velocidade e o caminho até o WhatsApp sempre à vista.",
       inclui: ["Diagnóstico grátis", "Mais velocidade", "Visual moderno"],
       msg: "Oi Igor! Quero um diagnóstico do meu site atual.",
     },
@@ -273,10 +275,10 @@ function Servicos() {
         </div>
         <div className="servicos-lista">
           {lista.map((s) => (
-            <article key={s.nome} className={`servico${s.tag ? " destaque" : ""}`}>
+            <article key={s.nome} className="servico">
               <div className="servico-nome">
                 <h3>{s.nome}</h3>
-                {s.tag && <span className="selo">{s.tag}</span>}
+                <p className="servico-quem">{s.quem}</p>
               </div>
               <p className="servico-desc">{s.desc}</p>
               <ul className="servico-inclui">
