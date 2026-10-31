@@ -34,6 +34,8 @@ export function podeUsar3D() {
   if (nav.connection?.effectiveType && /(^|-)2g/.test(nav.connection.effectiveType)) return false;
   if ((nav.deviceMemory ?? 8) <= 2) return false;
   if ((nav.hardwareConcurrency ?? 8) <= 2) return false;
+  // celular: só aparelhos intermediários para cima (4 GB de memória e 6 núcleos)
+  if (matchMedia("(pointer: coarse)").matches && ((nav.deviceMemory ?? 4) < 4 || (nav.hardwareConcurrency ?? 4) < 6)) return false;
   try {
     const c = document.createElement("canvas");
     if (!(c.getContext("webgl2") || c.getContext("webgl"))) return false;

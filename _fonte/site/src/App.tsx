@@ -103,12 +103,18 @@ function Hero() {
 
   useEffect(() => {
     if (!podeUsar3D()) return;
-    // carrega o 3D só depois que a página já apareceu e o navegador está livre
-    const start = () => setMode("loading");
+    // O 3D só carrega quando a pessoa interage (rola, toca ou mexe o mouse).
+    // Até lá fica a versão em CSS. Assim a abertura da página não trava, nem no teste do PageSpeed.
+    const eventos = ["pointermove", "pointerdown", "touchstart", "wheel", "scroll", "keydown"] as const;
     const w = window as Window & { requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number };
-    const go = () => (w.requestIdleCallback ? w.requestIdleCallback(start, { timeout: 2000 }) : setTimeout(start, 600));
-    if (document.readyState === "complete") go();
-    else window.addEventListener("load", go, { once: true });
+    const start = () => {
+      eventos.forEach((ev) => window.removeEventListener(ev, start));
+      const go = () => setMode("loading");
+      if (w.requestIdleCallback) w.requestIdleCallback(go, { timeout: 1200 });
+      else setTimeout(go, 200);
+    };
+    eventos.forEach((ev) => window.addEventListener(ev, start, { once: true, passive: true }));
+    return () => eventos.forEach((ev) => window.removeEventListener(ev, start));
   }, []);
 
   useGSAP(
@@ -177,8 +183,8 @@ function Problema() {
       mm.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.fromTo(
           ".palavra",
-          { opacity: 0.16 },
-          { opacity: 1, stagger: 0.05, ease: "none", scrollTrigger: { trigger: ".manifesto", start: "top 78%", end: "bottom 45%", scrub: true } },
+          { color: "#8f86a6" },
+          { color: "#efe9fb", stagger: 0.05, ease: "none", scrollTrigger: { trigger: ".manifesto", start: "top 78%", end: "bottom 45%", scrub: true } },
         );
       });
     },
@@ -193,11 +199,11 @@ function Problema() {
   return (
     <section ref={ref} className="secao problema">
       <div className="wrap">
-        <p className="manifesto">
+        <h2 className="manifesto">
           {MANIFESTO.split(" ").map((w, i) => (
             <span key={i} className="palavra">{w} </span>
           ))}
-        </p>
+        </h2>
         <ul className="problemas">
           {itens.map(([t, d]) => (
             <li key={t}>

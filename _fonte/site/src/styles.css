@@ -42,14 +42,15 @@ p { margin: 0; }
   cursor: pointer;
 }
 .btn:active { transform: scale(.98); }
-.btn-primario { background: var(--roxo); color: #fff; }
-.btn-primario:hover { background: #8a45f5; }
+/* roxo um tom abaixo do #9d5cff só no fundo dos botões, para o texto branco passar no contraste (4,9:1) */
+.btn-primario { background: #8a45f5; color: #fff; }
+.btn-primario:hover { background: #7a35eb; }
 .btn-primario:disabled { opacity: .6; cursor: progress; }
 .btn-fantasma { border-color: #3a2f52; color: var(--texto); }
 .btn-fantasma:hover { border-color: var(--lilas); }
 .btn-sm { padding: 10px 16px; font-size: 14px; }
-.btn-wa { background: #1fa855; color: #fff; }
-.btn-wa:hover { background: #1b9a4d; }
+.btn-wa { background: #137a3d; color: #fff; }
+.btn-wa:hover { background: #0f6a34; }
 .link-acao {
   display: inline-block; font-weight: 600; color: var(--lilas); text-decoration: none;
   background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
@@ -70,6 +71,7 @@ p { margin: 0; }
 .hero { position: relative; height: 180vh; }
 .hero-fixa { position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; }
 .hero-canvas { position: absolute; inset: 0; opacity: 0; transition: opacity 1.4s ease; }
+.hero-canvas canvas { display: block; width: 100%; height: 100%; }
 .hero-3d .hero-canvas { opacity: 1; }
 .hero-sombra { position: absolute; inset: 0; pointer-events: none;
   background: linear-gradient(90deg, var(--bg) 0%, rgba(13,10,20,.88) 32%, rgba(13,10,20,.2) 62%, rgba(13,10,20,0) 100%),
@@ -117,7 +119,7 @@ p { margin: 0; }
 .secao-cabeca p a { color: var(--lilas); }
 
 /* problema */
-.manifesto { font-family: var(--sora); font-weight: 600; font-size: clamp(1.8rem, 3.9vw, 3.4rem); line-height: 1.14; letter-spacing: -.03em; max-width: 1080px; }
+.manifesto { color: var(--texto); font-family: var(--sora); font-weight: 600; font-size: clamp(1.8rem, 3.9vw, 3.4rem); line-height: 1.14; letter-spacing: -.03em; max-width: 1080px; }
 .problemas { list-style: none; padding: 0; margin: clamp(64px, 8vw, 104px) 0 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--linha); }
 .problemas li { padding: 28px 28px 8px 0; border-right: 1px solid var(--linha); }
 .problemas li + li { padding-left: 28px; }
