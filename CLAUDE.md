@@ -25,6 +25,9 @@ O site principal é gerado a partir de `_fonte/site/` (React + React Three Fiber
 - Identidade visual: fundo `#0d0a14`, roxo `#9d5cff`, lilás `#c084fc`, fontes Sora (títulos) e Inter (texto).
 - Logo: `assets/logo/` (wordmark "igor.design" com o ponto como pixel roxo). As letras são vetores gerados da fonte Sora (800 em "igor", 400 em "design"); não troque por texto. Ícone "ig." em `icone.svg` e PNGs (32, 180, 192, 512 e `instagram-perfil.png`).
 
+## Estilo (pedidos do Igor)
+- Nunca usar "bolinha de status" (ponto verde/colorido piscando ao lado de "Aberto agora", "Disponível", "Agenda aberta" etc.). O Igor acha que deixa cara de site feito por IA. O texto do status pode ficar, sem o ponto.
+
 ## Prospecção (mensagens para clientes)
 - Quando o Igor mandar o site de um prospect, abra num navegador de verdade (Playwright, computador e celular), tire print e teste os botões e links (WhatsApp, telefone, menus, formulário) antes de escrever. Botões flutuantes de plugins (ex.: Joinchat) não aparecem como link comum: procure por eles. Nunca afirme que algo não existe ou não funciona sem ter testado.
 - Mensagens só com o texto pronto, sem "senhor/senhora" e sem a palavra "valor" (use "um exemplo e uma proposta").

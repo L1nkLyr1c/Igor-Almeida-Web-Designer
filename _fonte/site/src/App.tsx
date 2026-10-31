@@ -147,7 +147,7 @@ function Hero() {
         <div className="hero-sombra" aria-hidden="true" />
         <div className="wrap hero-conteudo">
           <div className="hero-texto">
-            <p className="hero-status"><span className="ponto" aria-hidden="true" />Agenda aberta para novos projetos</p>
+            <p className="hero-status">Agenda aberta para novos projetos</p>
             <h1>Sites que fazem o seu negócio ser achado e chamado no WhatsApp</h1>
             <p className="hero-sub">Crio sites e landing pages rápidos e bonitos para pequenos negócios. Cada página é pensada para transformar visita em conversa.</p>
             <div className="hero-acoes">
@@ -266,9 +266,9 @@ function Servicos() {
 /* ---------- projetos ---------- */
 
 const PROJETOS = [
-  { nome: "Barbearia Navalha", tipo: "Landing page", desc: "Agendamento por barbeiro e horário, preços na vitrine e clube de assinatura.", img: "/assets/projetos/barbearia-navalha.jpg?v=3", href: "/projetos/barbearia-navalha.html" },
+  { nome: "Barbearia Navalha", tipo: "Landing page", desc: "Agendamento por barbeiro e horário, preços na vitrine e clube de assinatura.", img: "/assets/projetos/barbearia-navalha.jpg?v=4", href: "/projetos/barbearia-navalha.html" },
   { nome: "Clínica Vida Leve", tipo: "Site institucional", desc: "Oito especialidades, equipe e consulta marcada em três passos, com convênio.", img: "/assets/projetos/clinica-vida-leve.jpg?v=2", href: "/projetos/clinica-vida-leve.html" },
-  { nome: "Forno Vivo Pizzaria", tipo: "Cardápio digital", desc: "Cardápio com carrinho, entrega ou retirada e reserva de mesa enviadas pelo WhatsApp.", img: "/assets/projetos/forno-vivo-pizzaria.jpg?v=2", href: "/projetos/forno-vivo-pizzaria.html" },
+  { nome: "Forno Vivo Pizzaria", tipo: "Cardápio digital", desc: "Cardápio com carrinho, entrega ou retirada e reserva de mesa enviadas pelo WhatsApp.", img: "/assets/projetos/forno-vivo-pizzaria.jpg?v=3", href: "/projetos/forno-vivo-pizzaria.html" },
 ];
 
 function Projetos() {
