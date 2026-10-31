@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_fonte/
+
+Sitemap: https://igoralmeida.pages.dev/sitemap.xml
